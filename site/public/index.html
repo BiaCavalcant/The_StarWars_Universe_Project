@@ -26,7 +26,7 @@
           <li><a href="quizzes.html">QUIZZES</a></li>
           <li id="menu-toggle">MENU</li>
           <li><a href="contactUs.html">CONTACT US</a></li>
-          <li><a href="login.html">LOGIN</a></li>
+          <li><a href="about.html">ABOUT</a></li>
         </ul>
       </div>
       <div class="title-mid">
@@ -106,7 +106,7 @@
       <h1>DISCOVERY</h1>
       <div class="items-discovery">
         <div class="item">
-          <a href="planetas.html">
+          <a href="endor.html">
             <img src="assets/imgs/planet.png" alt="">
             <p>PLANETAS</p>
           </a>
@@ -206,11 +206,16 @@ carouselSlide.addEventListener("transitionend", () => {
 
 // toggle menu
 const menuToggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
 
 menuToggle.addEventListener("mouseover", function() {
+  const menu = document.getElementById("menu");
   menu.style.display = "block";
 });
+
+menuToggle.addEventListener("mouseleave", function() {
+  const menu = document.getElementById("menu");
+  menu.style.display = "none";
+})
 
 
 
