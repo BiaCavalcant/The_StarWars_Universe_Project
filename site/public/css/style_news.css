@@ -288,5 +288,116 @@
     display: block;
     width: 0;
     height: inherit;
-    background-color: linear-gradient(90deg, #33ffbb, #31acff, #2ad39f, #0170f0);
+    background-color: #F9FFB5;
+}
+
+.banner-quizz{
+    width: 100%;
+    height: 70vh;
+    background-image: url("../assets/imgs/quizz1.jpeg");
+    background-size: cover;
+}
+
+#quizz2{
+    background-image: url("../assets/imgs/quizz2.jpeg");
+    background-size: cover;
+}
+
+.header-quizz{
+    display: flex;
+    flex-direction: column;
+    font-size: 19px;
+    color: #a2a2a2;
+    width: 80%;
+    text-align: start;
+    height: 60vh;
+    justify-content: space-around;
+}
+
+#centralizar{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-quizz h1{
+    color: white;
+    margin: 0;
+    font-size: x-large;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-weight: 600;
+    align-self: center;
+}
+
+.form-quizz {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 80%;
+    justify-content: space-evenly;
+    height: 100vh;
+    font-size: large;
+}
+
+.content-quizz{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 80%;
+    align-items: center;
+    
+}
+
+.content-quizz h1{
+    color: white;
+    margin: 0;
+    font-size: x-large;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-weight: 600;
+    align-self: center;
+}
+
+.select-option{
+    width: 50%;
+    outline: 0;
+    border: 0;
+    box-shadow: none;  
+    height: 7vh;
+    margin-left: 2%;
+}
+
+select, option{
+    font-size: 15px;
+    background-color: #3a3a3a;
+    border-style: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn-validar{
+    width: 50%;
+    align-self: center;
+    height: 7vh;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #F9FFB5;
+    color: #000000;
+    font-size: 15px;
+    
+}
+
+#btn-validar:hover{
+    background-color: #f9ffb500;
+    border: #F9FFB5 1px solid;
+    color: #F9FFB5;
+    transition: all .2s ease-in-out;
 }

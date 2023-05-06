@@ -46,7 +46,7 @@
                     </form>
                 </div>
                 <div class="img-log-cad"></div>
-            </div>
+        </div>
            
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
@@ -78,7 +78,7 @@
 
             finalizarAguardar();
             return false;
-        } else if(nomeVar.lenght < 5){
+        } else if(nomeVar.length < 5){
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Insira um nome válido!";
 
@@ -90,34 +90,9 @@
 
             finalizarAguardar();
             return false;
-        }else if(senhaVar.lenght < 8){
+        }else if(senhaVar.length < 8){ 
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Insira uma senha maior que 8 caracteres!";
-
-            finalizarAguardar();
-            return false;
-        }else if(
-            senhaVar =! senhaVar.indexOf("@") < 0 || 
-            senhaVar.indexOf("!") < 0 || 
-            senhaVar.indexOf("#") < 0 || 
-            senhaVar.indexOf("$") < 0 || 
-            senhaVar.indexOf("%") < 0 || 
-            senhaVar.indexOf("&") < 0 || 
-            senhaVar.indexOf("*") < 0 || 
-            senhaVar.indexOf("(") < 0 || 
-            senhaVar.indexOf(")") < 0 || 
-            senhaVar.indexOf("-") < 0 || 
-            senhaVar.indexOf("+") < 0 || 
-            senhaVar.indexOf("@") < 0 ||
-            senhaVar.indexOf("?") < 0 ||
-            senhaVar.indexOf("/") < 0 ||
-            senhaVar.indexOf("|") < 0 ||
-            senhaVar.indexOf(";") < 0 ||
-            senhaVar.indexOf(":") < 0 
-            )
-            {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Insira uma senha com ao menos 1 caracter especial!";
 
             finalizarAguardar();
             return false;
@@ -129,11 +104,7 @@
             return false;
         }
         else {
-            setInterval(sumirMensagem, 500000)
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+            fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -174,5 +145,11 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+            setInterval(sumirMensagem, 500000)
+            
+        }
+
+        // Enviando o valor da nova input
+        
 
 </script>

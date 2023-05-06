@@ -49,9 +49,8 @@
 
                         <label for="input_mensagem">Mensagem</label>
                         <input type="text" class="input_form" name="input_mensagem" id="input_mensagem">
-
-                        <button id="enviar" onclick="enviar()">Enviar</button>
                     </form>
+                    <button style="margin-top: 4%;" onclick="enviar()" id="enviar">Enviar</button>
                 </div>
                 <div class="right-image">
 
@@ -99,7 +98,7 @@
 
 <script>
     function enviar() {
-        var email = "star_wars_universe_project@hotmail.com";
+        var email = "bianca.reis@sptech.school";
         var assunto = `Olá, meu nome é ` + input_nome.value;
         var corpo = input_mensagem.value;
         window.open("mailto:" + email + "?subject=" + assunto + "&body=" + corpo);

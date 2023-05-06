@@ -132,8 +132,68 @@
     background-color: #12121200;
     background-image: url('../assets/imgs/leia.png');
     background-position: 100%;
+    background-size: cover;
 }
 
+.chewie{
+    width: 100%;
+    height: 100vh;
+    background-color: #12121200;
+    background-image: url('../assets/imgs/chewie.png');
+    background-position: 100%;
+    background-size: cover;
+}
+
+.sidious{
+    width: 100%;
+    height: 100vh;
+    background-color: #12121200;
+    background-image: url('../assets/imgs/sidious-m.png');
+    background-position: 100%;
+    background-size: cover;
+}
+
+#leia{
+    color: white;
+    margin-left: 6%;
+    width: 50%;
+}
+
+#yoda{
+    color: white;
+    margin-left: 6%;
+    width: 50%;
+}
+#vader{
+    color: white;
+    margin-left: 6%;
+    width: 45%;
+}
+
+#luke{
+    width: 50%;
+}
+
+#solo{
+    color: white;
+    text-align: end;
+    align-self: flex-end;
+    width: 88%;
+}
+
+#chewie{
+    color: white;
+    margin-left: 6%;
+    align-self: flex-end;
+    width: 38%;
+}
+
+#sidious{
+    color: white;
+    margin-left: 6%;
+    align-self: flex-end;
+    width: 38%;
+}
 .droids{
     width: 100%;
     height: 100vh;
