@@ -38,6 +38,21 @@
     font-size: 17px;
 }
 
+.msg-about p{
+    display: block; opacity: 0;
+    animation: reveal 0.9s forwards var(--d);
+}
+
+.text-planet{
+    display: block; opacity: 0;
+    animation: reveal 0.9s forwards var(--d);
+}
+
+@keyframes reveal{
+    from { transform: translateY(20px);}
+    to { opacity: 1; transform: none; }
+}
+
 .content-about h1{
     margin-top: 2%;
     font-size: 45px;
@@ -590,5 +605,24 @@
     margin-bottom: 2%;
 }
 
+.video-kylo{
+    margin-left: 740px;
+    display: flex;
+    align-self: center;
+    margin-top: -100px;
+    width: 40%;
+    height: 300px;
+}
+
+#video-solo{
+    margin-left:40px;
+    height: 250px;
+    margin-top: -50px;
+}
+
+#video-yoda{
+    height: 250px;
+    margin-top: -50px;
+}
 
 

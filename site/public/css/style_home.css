@@ -103,6 +103,7 @@
     background-image: url('../assets/imgs/back-login.png');
     background-position: 50%;
     display: flex;
+    background-size: cover;
     /* align-items: center;
     justify-content: center; */
     width: 100%;
@@ -122,8 +123,13 @@
     display: flex;
     flex-direction: column;
     width: 25%;
-    border-left: #ababab 2px solid;
+    border-left: #9a9a9a 2px solid;
     padding-left: 2%;
+}
+
+.card:hover{
+    box-shadow: -10px -2px 10px -7px rgba(255, 255, 255, 0.506);
+    transition: 0.2s;
 }
 
 .card h1 {
@@ -241,19 +247,23 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 5%;
-
+    
 }
 
 .card-dep {
     width: 43%;
     background-color: #212121;
     height: 40vh;
-    border-radius: 3px;
     display: flex;
     flex-direction: row;
     padding: 2%;
-
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0px -1px 76px -35px rgba(246,255,168,1);
 }
+
+
 
 .img-dep1 {
     width: 50%;
@@ -318,6 +328,7 @@
     display: flex;
     flex-direction: column;
     transition: all .2s ease-in-out;
+    
 }
 
 .item a {
@@ -532,11 +543,13 @@
     background-color: rgba(0, 255, 255, 0);
     border: #F9FFB5 1px solid;
     width: 20%;
-    height: 60px;
-    margin-top: 5%;
-    border-radius: 25px;
+    height: 50px;
+    margin-top: 21%;
     color: #F9FFB5;
+    
 }
+
+
 
 .explore-btn:hover {
     background-color: #F9FFB5;
@@ -802,6 +815,10 @@
     justify-content: baseline;
     align-items: baseline;
     border: none;
+    border-radius: 8px;
+    background-color: #dedede;
+    padding-left: 9px;
+    font-size: 15px;
 }
 
 #input_mensagem{
@@ -843,4 +860,14 @@
     width: 0;
     height: inherit;
     background-color: #F9FFB5;
+}
+
+.title-mid p, #img-logo{
+    display: block; opacity: 0;
+    animation: reveal 0.9s forwards var(--d);
+}
+
+@keyframes reveal{
+    from { transform: translateY(20px);}
+    to { opacity: 1; transform: none; }
 }
