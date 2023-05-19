@@ -16,6 +16,11 @@ router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
 
+//cadastrar_quiz
+router.post("/cadastrar_quizz", function (req, res) {
+    usuarioController.cadastrar_quizz(req, res);
+})
+
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });

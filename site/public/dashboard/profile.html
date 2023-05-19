@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfil | The Star Wars Universe</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <script src="https://kit.fontawesome.com/26c2ecd851.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../assets/icon/favicon.ico">
+    <link rel="stylesheet" href="../css/style_news.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  
+    <div class="noticia">
+      <div class="header">
+        <ul class="nav-bar">
+          <li ><a href="home.html">HOME</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">HAVE FUN</a>
+            <div class="dropdown-content">
+              <a href="endor.html">PLANETAS</a>
+              <a href="personagens.html">PERSONAGENS</a>
+              <a href="filmes.html">FILMES</a>
+              <a href="recomendacoes.html">RECOMENDAÇÕES</a>
+            </div>
+          </li>
+          <li><a href="quizzes.html">QUIZZES</a></li>
+          <li><img style="margin-top: -25px;" width="140px" height="60px" src="../assets/imgs/logo (4).png" alt=""></li>
+          
+          <li><a href="contactUs.html">CONTACT US</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li style="margin-left: -20px;" id="user-li">
+            <a class="li-user" href="profile.html" >
+                <li class="fa fa-user-o">PERFIL</li>
+                
+            </a>
+          </li>
+        </ul>
+        
+        </div>
+       
+        <!-- conteudo vai aqui -->
+
+        <div class="profile-main">
+            <div class="sections-profile">
+                <div class="section-left">
+                    <div class="section-left-content">
+                
+                        <div class="foto-profile">
+
+                        </div>
+
+                        <div class="info-content">
+                            <div class="info-user">
+                                <i class="fa-solid fa-user"></i>
+                                <span id="span_name"></span>
+                            </div>
+                            <div class="info-user">
+                                <i class="fa-solid fa-envelope"></i><span  id="span_user"></span>
+                            </div>
+                            
+                        </div>
+                        <div class="logoff">
+                            <a style="color: white; text-decoration: none;" href="../index.html"><i class="fa-solid fa-right-to-bracket"></i>Logoff</a>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="section-right">
+                  <div class="section-right-header">
+                
+                  </div>
+                </div>
+            </div>
+
+            <div class="part-baixo-profile">
+              
+            </div>
+        </div>
+        
+       
+    </div>
+
+
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="logo-icons">
+          <img src="../assets/imgs/logo (4).png" alt="">
+          <div class="icons">
+            <i style="color: white;" class="fa fa-facebook"></i>
+            <i style="color: white;" class="fa fa-instagram"></i>
+            <i style="color: white;" class="fa fa-youtube"></i>
+            <i style="color: white;" class="fa fa-twitter"></i>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="column">
+            <h1>Institucional</h1>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastro</a>
+          </div>
+          <div class="column">
+            <h1>Have Fun!</h1>
+            <a href="recomendacoes.html">Recomendações</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="index.html">Home</a>
+          </div>
+          <div class="column">
+            <h1>Menu</h1>
+            <a href="personagens.html">Personagens</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="endor.html">Planetas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+  
+  span_user.innerHTML = `${sessionStorage.EMAIL_USUARIO}`
+  span_name.innerHTML = `${sessionStorage.NOME_USUARIO}`
+
+  // if(span_name == 'undefined'){
+  //   span_name.innerHTML = "Ainda não cadastrou o nome"
+  // }
+</script>

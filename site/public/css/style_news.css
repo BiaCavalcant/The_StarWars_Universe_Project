@@ -4,6 +4,11 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+@font-face {
+  font-family: "Star Wars";
+  src: url(../assets/star_jedi/starjedi/Starjedi.ttf);
+}
+
 .principal{
     width: 100%;
     height: 100vh;
@@ -18,7 +23,7 @@
     display: flex;
     justify-content: center;
     background-color: black;
-    height: 15vh;
+    height: 18vh;
     align-items: center;
 }
 
@@ -32,6 +37,10 @@
     color: #F9FFB5;
 }
 
+#user-li{
+    display: flex;
+    align-self: flex-end;
+}
 
 .nav-bar{
     display: flex;
@@ -39,6 +48,7 @@
     width: 50%;
     margin-top: 2%;
     font-size: small;
+    margin-left: 30px;
 }
 
 .nav-bar-login{
@@ -47,7 +57,6 @@
     width: 90%;
     margin-top: 2%;
     font-size: small;
-
 }
 
 
@@ -72,8 +81,6 @@
     height: 34vh;
     display: flex;
     flex-direction: row;
-    
-    
 }
 
 .logo-icons{
@@ -301,17 +308,22 @@
 #quizz2{
     background-image: url("../assets/imgs/quizz2.jpeg");
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .header-quizz{
     display: flex;
     flex-direction: column;
     font-size: 19px;
-    color: #a2a2a2;
+    color: #ffffff;
     width: 80%;
     text-align: start;
-    height: 60vh;
-    justify-content: space-around;
+    height: fit-content;
+    margin-bottom: 3%;
+    /* justify-content: space-around; */
 }
 
 #centralizar{
@@ -329,32 +341,38 @@
     margin-bottom: 3%;
     font-weight: 600;
     align-self: center;
+    font-family: "Star Wars";
+    font-weight: 400;
 }
 
 .form-quizz {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: rgb(255, 255, 255);
     width: 80%;
     justify-content: space-evenly;
-    height: 100vh;
+    height: fit-content;
     font-size: large;
 }
 
 .content-quizz{
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    height: 100vh;
     width: 80%;
     align-items: center;
-    
+    color: rgb(252, 252, 252);
+    background-color: #000000;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 3%;
 }
 
 .content-quizz h1{
     color: white;
     margin: 0;
     font-size: x-large;
-    margin-top: 3%;
+    /* margin-top: 3%; */
     margin-bottom: 3%;
     font-weight: 600;
     align-self: center;
@@ -378,12 +396,25 @@ select, option{
     text-align: center;
 }
 
+  .question select{
+    width: 60%;
+    height: 10vh;
+    font-size: x-large;
+  }
+
 .question{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    margin-bottom: 3%;
+    font-size: x-large;
 }
 
-#btn-validar{
+
+
+.btn_quizz{
     width: 50%;
     align-self: center;
     height: 7vh;
@@ -392,6 +423,7 @@ select, option{
     background-color: #F9FFB5;
     color: #000000;
     font-size: 15px;
+    border: 0;
     
 }
 
@@ -401,3 +433,266 @@ select, option{
     color: #F9FFB5;
     transition: all .2s ease-in-out;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin-top: 17px;
+    text-align: center;
+    background-color: #21212191;
+    height: 25vh;
+    border-radius: 16px;
+    
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  #painel-game{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 3%;
+    display: none;
+  }
+
+  #btn-jogar{
+    border: none;
+    width: 30%;
+    height: 15vh;
+    border-bottom: 30px;
+    border-radius: 15px;
+    background-color: #F9FFB5;
+    font-size: 20px;
+  }
+
+  #btn-jogar:hover{
+    transition: 0.5s ease-in-out;
+    background-color: #93966b;
+  }
+
+  .li-user{
+    color: white;
+    text-decoration: none;
+  }
+
+  .profile-main{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sections-profile{
+    width: 80%;
+    height: 90vh;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 3%;
+  }
+
+  .section-left{
+    background-color: #2C2C2C;
+    width: 25%;
+    height: inherit;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-right{
+    background-color: #2C2C2C;
+    width: 70%;
+    height: inherit;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+  .section-right-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: rgb(204, 204, 204);
+    margin-top: 3%;
+  }
+
+  .section-right-header h1{
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+  }
+
+  .foto-profile{
+    width: 80%;
+    height: 30vh;
+    background-image: url('../assets/imgs/profile.png');
+    background-size: cover;
+    border-radius: 50% 50%;
+  }
+
+
+  .section-left-content{
+    width: 90%;
+    height: 70vh;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    text-align: start;
+  }
+  
+  .info-user{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+  }
+
+  /* .fa-solid{
+    margin-right: 10px;
+  } */
+
+  .info-content{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20%;
+  }
+
+  .logoff{
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+  }
+
+  #div_pontuacao{
+    display: flex;
+    width: 100%;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #2C2C2C;
+    margin-bottom: 3%;
+  }
+
+  .content-quizzz{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70vh;
+    width: 90%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+  }
+
+ 
+
+  .cardquizz {
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 600px);
+    width: 45%;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    color: #000;
+    transform: translateZ(0);
+  }
+  
+  .card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+    transition: transform 0.2s;
+  }
+  
+  .card__footer {
+    padding: 0 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: red;
+    display: grid;
+    grid-template-row: auto auto;
+    gap: 0.5ch;
+    background: hsla(0, 0%, 84%, 0.5);
+    backdrop-filter: blur(var(--blur));
+    height: 30%;
+    align-content: center;
+  }
+  
+  .card__action {
+    position: absolute;
+    aspect-ratio: 1;
+    width: calc(var(--size) * 0.15);
+    bottom: 40%;
+    right: 1.5rem;
+    transform: translateY(50%)
+      translateY(
+        calc(
+          (var(--size) * 0.4)
+        )
+      )
+      translateY(calc(var(--hover, 0) * (var(--size ) * -0.50)));
+    background: purple;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+    background: hsl(0 0% 100% / 0.5);
+  /*   backdrop-filter: blur(calc(var(--blur) * 0.5)); */
+    transition: transform 0.2s;
+  }
+  
+  .card__action svg {
+    aspect-ratio: 1;
+    width: 50%;
+  }
+  
+  .card__footer span:nth-of-type(1) {
+    font-size: calc(var(--size) * 0.065);
+  }
+  
+  .card__footer span:nth-of-type(2) {
+    font-size: calc(var(--size) * 0.035);
+  }
+  
+  .cardquizz:is(:hover, :focus-visible) {
+    --hover: 1;
+  }
+
+  .part-baixo-profile{
+    background-color: #2C2C2C;
+    width: 80%;
+    align-self: center;
+    height: 60vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }

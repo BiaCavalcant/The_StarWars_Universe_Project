@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quizzes | The Star Wars Universe</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    
+    <link rel="icon" href="../assets/icon/favicon.ico">
+    <link rel="stylesheet" href="../css/style_news.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="noticia">
+      <div class="header">
+        <ul class="nav-bar">
+            <li ><a href="home.html">HOME</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">HAVE FUN</a>
+              <div class="dropdown-content">
+                <a href="endor.html">PLANETAS</a>
+                <a href="personagens.html">PERSONAGENS</a>
+                <a href="filmes.html">FILMES</a>
+                <a href="recomendacoes.html">RECOMENDAÇÕES</a>
+              </div>
+            </li>
+            <li><a href="quizzes.html">QUIZZES</a></li>
+            <li><img style="margin-top: -25px;" width="140px" height="60px" src="../assets/imgs/logo (4).png" alt=""></li>
+            
+            <li><a href="contactUs.html">CONTACT US</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li style="margin-left: -20px;" id="user-li">
+              <a class="li-user" href="profile.html" >
+                  <li class="fa fa-user-o">PERFIL</li>
+                  
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="noticia" id="centralizar">
+       <div class="content-quizzz">
+        <a href="quizz1.html" class="cardquizz">
+            <img src="../assets/imgs/retorno-jedi.jpeg" alt="balloon with an emoji face" class="card__img">
+            <span class="card__footer">
+              <span>Teste seus conhecimentos em Star Wars</span>
+              <span>TESTE DE CONHECIMENTO</span>
+            </span>
+            <span class="card__action">
+              <svg viewBox="0 0 448 512" title="play">
+                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+              </svg>
+            </span>
+          </a>
+
+            <a href="quizz2.html" class="cardquizz">
+                <img src="../assets/imgs/despertar-forca.jpeg" style="width: 155%;" alt="balloon with an emoji face" class="card__img">
+                <span class="card__footer">
+                  <span>Descubra o seu lado da força</span>
+                  <span>TESTE DE PERSONALIDADE</span>
+                </span>
+                <span class="card__action">
+                  <svg viewBox="0 0 448 512" title="play">
+                    <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+                  </svg>
+                </span>
+              </a>
+       </div>
+    </div>
+
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="logo-icons">
+          <img src="../assets/imgs/logo (4).png" alt="">
+          <div class="icons">
+            <i style="color: white;" class="fa fa-facebook"></i>
+            <i style="color: white;" class="fa fa-instagram"></i>
+            <i style="color: white;" class="fa fa-youtube"></i>
+            <i style="color: white;" class="fa fa-twitter"></i>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="column">
+            <h1>Institucional</h1>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastro</a>
+          </div>
+          <div class="column">
+            <h1>Have Fun!</h1>
+            <a href="recomendacoes.html">Recomendações</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="home.html">Home</a>
+          </div>
+          <div class="column">
+            <h1>Menu</h1>
+            <a href="personagens.html">Personagens</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="endor.html">Planetas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function validarQuizz() {
+        // puxando o valor dos options
+        var resposta1 = question1.value;
+        var resposta2 = question2.value;
+        var resposta3 = question3.value;
+        var resposta4 = question4.value;
+        var resposta5 = question5.value;
+        var resposta6 = question6.value;
+        var resposta7 = question7.value;
+
+        // iniciando a pontuação com 0 p ser incrementada a cada acerto
+        var pontuacao = 0;
+
+        if (resposta1 === 'Selecione sua resposta' || resposta2 === 'Selecione sua resposta' || resposta3 === 'Selecione sua resposta' || resposta4 === 'Selecione sua resposta' || resposta5 === 'Selecione sua resposta' || resposta6 === 'Selecione sua resposta' || resposta7 === 'Selecione sua resposta') {
+        alert('Por favor, responda todas as perguntas.');
+        }
+
+        if (resposta1 === 'Conde Dookan') {
+            pontuacao++; //incremento da pontuação
+        }
+
+        if (resposta2 === 'DL-44') {
+            pontuacao++;
+        }
+
+        if (resposta3 === 'Sheev Palpatine') {
+            pontuacao++;
+        }
+
+        if (resposta4 === 'Imperador Palpatine') {
+            pontuacao++;
+        }
+
+        if (resposta5 === 'Zabrak') {
+            pontuacao++;
+        }
+
+        if (resposta6 === '1977') {
+            pontuacao++;
+        }
+
+        if (resposta7 === 'George Lucas') {
+            pontuacao++;
+        }
+
+        // exibindo a pontuação
+        alert(`Você acertou ${pontuacao} de 7 perguntas.`);
+        }
+
+</script>

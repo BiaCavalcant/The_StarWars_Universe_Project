@@ -1,138 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Login | The Star Wars Universe</title>
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/favicon.ico">
-    <link rel="stylesheet" href="./css/style_home.css">
-    <link rel="stylesheet" href="./css/style_news.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="./assets/icon/favicon.ico" />
+    <link rel="stylesheet" href="./css/style_home.css" />
+    <link rel="stylesheet" href="./css/style_news.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  </head>
 
-</head>
+  <body>
+    <div class="header" style="position: static;">
+      <ul class="nav-bar-login">
+        <li>
+          <img
+            style="margin-top: -25px"
+            width="150px"
+            height="60px"
+            src="assets/imgs/logo (4).png"
+            alt=""
+          />
+        </li>
+        <li>
+          <a href="cadastro.html"
+            ><button class="login-btn">CADASTRO</button></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="login-cadastro">
+      <div class="card-login-cadastro">
+        <div class="img-log-cad"></div>
+        <div class="content-log-cad">
+          <h1>Login</h1>
+          <div class="form-login">
+            <input
+              type="email"
+              placeholder="Email"
+              class="input_log"
+              name="email_input"
+              id="email_input"
+            />
 
-<body>
-    <div class="header">
-        <ul class="nav-bar-login">
-       
-          <li><img style="margin-top: -25px;" width="150px" height="60px" src="assets/imgs/logo (4).png" alt=""></li>
-          <li><a href="cadastro.html"><button class="login-btn">CADASTRO</button></a></li>
-            </ul>
+            <input
+              type="password"
+              placeholder="Senha"
+              class="input_log"
+              name="senha_input"
+              id="senha_input"
+            />
+            <button onclick="entrar()" class="btn-entrar">LOGIN</button>
+          </div>
         </div>
-        <div class="login-cadastro">
-            <div class="card-login-cadastro">
-                <div class="img-log-cad"></div>
-                <div class="content-log-cad">
-                    <h1>Login</h1>
-                    <form class="form-login">
-                        
-                        <input type="email" placeholder="Email" class="input_log" name="email_input" id="email_input">
-                       
-                        <input type="password" placeholder="Senha" class="input_log" name="senha_input" id="senha_input">
-                        <button onclick="entrar()" class="btn-entrar">LOGIN</button>
-                    </form>
-                </div>
-            </div>
+      </div>
 
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
+      <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
         </div>
+      </div>
 
-        <div id="div_erros_login"></div>
+      <div id="div_erros_login"></div>
     </div>
     <div id="div_aguardar"></div>
-</body>
-
+  </body>
 </html>
 
 <script>
-    function entrar() {
-        aguardar();
+  function entrar() {
+    aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
-        } else if (emailVar.indexOf("@") < 0 || emailVar.indexOf(".com") < 0 && emailVar.indexOf(".br") < 0 && emailVar.indexOf(".org") < 0 ) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Insira um email válido!";
+    if (emailVar == "" || senhaVar == "") {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+      finalizarAguardar();
+      return false;
+    // } else if (
+    //   emailVar.indexOf("@") < 0 ||
+    //   emailVar.indexOf(".com") < 0 &&
+    //     emailVar.indexOf(".br") < 0 &&
+    //     emailVar.indexOf(".org") < 0
+    // ) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML = "Insira um email válido!";
 
-            finalizarAguardar();
-            return false;
-        }else if(senhaVar.length < 8){
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Insira uma senha maior que 8 caracteres!";
+    //   finalizarAguardar();
+    //   return false;
+     } 
+     else if (senhaVar.length < 8) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = "Insira uma senha maior que 8 caracteres!";
 
-            finalizarAguardar();
-            return false;
-        }else {
-            setInterval(sumirMensagem, 5000)
-            console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
 
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+    }
+      console.log("FORM LOGIN: ", emailVar);
+      console.log("FORM SENHA: ", senhaVar);
 
-            if (resposta.ok) {
-                console.log(resposta);
+      fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("ESTOU NO THEN DO entrar()!");
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+          if (resposta.ok) {
+            console.log(resposta);
 
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+            resposta.json().then((json) => {
+              console.log(json);
+              console.log(JSON.stringify(json));
 
-                    setTimeout(function () {
-                        window.location = "index.html";
-                    }, 1000); // apenas para exibir o loading
+              sessionStorage.EMAIL_USUARIO = json.email;
+              sessionStorage.NOME_USUARIO = json.nome;
+              sessionStorage.ID_USUARIO = json.idUsuario;
+            });
+            setTimeout(function () {
+              window.location = "../dashboard/home.html";
+            }, 1000); // apenas para exibir o loading
+          } else {
+            console.log("Houve um erro ao tentar realizar o login!");
 
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
+              resposta.text().then((texto) => {
+              console.error(texto);
+              finalizarAguardar(texto);
+            });
+          }
         })
+        .catch(function (erro) {
+          console.log(erro);
+        });
 
-        return false;
+      return false;
     }
 
-        }
 
-        
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
 </script>

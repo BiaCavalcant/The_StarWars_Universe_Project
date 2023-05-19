@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quizz | The Star Wars Universe</title>
+
+    <script src="../js/funcoes.js"></script>
+
+
+    <link rel="icon" href="../assets/icon/favicon.ico">
+    <link rel="stylesheet" href="../css/style_news.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="noticia">
+        <div class="header">
+            <ul class="nav-bar">
+                <li><a href="home.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">HAVE FUN</a>
+                    <div class="dropdown-content">
+                        <a href="endor.html">PLANETAS</a>
+                        <a href="personagens.html">PERSONAGENS</a>
+                        <a href="filmes.html">FILMES</a>
+                        <a href="recomendacoes.html">RECOMENDAÇÕES</a>
+                    </div>
+                </li>
+                <li><a href="quizzes.html">QUIZZES</a></li>
+                <li><img style="margin-top: -25px;" width="140px" height="60px" src="../assets/imgs/logo (4).png"
+                        alt=""></li>
+
+                <li><a href="contactUs.html">CONTACT US</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li style="margin-left: -20px;" id="user-li">
+                    <a class="li-user" href="profile.html">
+                <li class="fa fa-user-o">PERFIL</li>
+
+                </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="banner-quizz" id="quizz2"></div>
+    </div>
+    <div class="noticia" id="centralizar">
+        <div class="header-quizz">
+            <h1>quizz - você é mais Jedi ou Sith?</h1>
+            <p>Bem-vindo ao Quizz "Você é mais Jedi ou Sith?"! Neste jogo de perguntas e respostas, você terá a
+                oportunidade de saber o seu lado da força do universo mais icônico do cinema.</p>
+            <p>As perguntas são direcionadas para entender melhor sobre a sua personalidade e descobrir qual o seu lado
+                da força! No final do jogo, você receberá sua pontuação total e poderá compará-la com a de outros
+                jogadores.</p>
+            <p>Então, prepare-se para entrar em uma galáxia muito distante e descobrir qual sua dimensão em Star Wars.
+                Que a Força esteja com você!</p>
+        </div>
+        <div class="content-quizz">
+            <div class="form-quizz">
+
+                <div class="question" id="q_one">
+                    <label for="question1">1. Qual é a sua opinião sobre o uso de emoções na tomada de decisões?</label>
+                    <select name="question1" id="question1" class="select-option" required>
+                        <option value="Selecione sua resposta" disabled selected>Selecione sua resposta</option>
+                        <option value="As emoções devem ser controladas e mantidas sob controle.">As emoções devem ser
+                            controladas e mantidas sob controle.</option> <!-- certa -->
+                        <option value="As emoçoes devem ser usadas para orietar nossas decisões.">As emoçoes devem ser
+                            usadas para orietar nossas decisões.</option>
+                        <option value="As emoções podem ser úteis em algumas situações.">As emoções podem ser úteis em
+                            algumas situações.</option>
+                    </select>
+                    <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
+                </div>
+
+                <div class="question" id="q_two" style="display: none;">
+                    <label for="question2">2. Qual seria a cor do seu sabre de luz?</label>
+                    <select name="question2" id="question2" class="select-option" required>
+                        <option value="Selecione sua resposta" disabled selected>Selecione sua resposta</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Verde">Verde</option> <!-- certa -->
+                        <option value="Roxo">Roxo</option>
+                    </select>
+                    <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
+                </div>
+
+                <div class="question" id="q_three" style="display: none;">
+                    <label for="question3">3. Você se considera uma pessoa:</label>
+                    <select name="question3" id="question3" class="select-option" required>
+                        <option value="Selecione sua resposta" disabled selected>Selecione sua resposta</option>
+                        <option value="Determinada e entusiasmada">Determinada e entusiasmada </option> <!-- certa -->
+                        <option value="Calma e resiliente">Calma e resiliente</option>
+                        <option value="Intensa e Temperamental">Intensa e Temperamental</option>
+                    </select>
+                    <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
+                </div>
+
+                <div class="question" id="q_four" style="display: none;">
+                    <label for="question4">4. O que é mais importante para você?</label>
+                    <select name="question4" id="question4" class="select-option" required>
+                        <option value="Selecione sua resposta" disabled selected>Selecione sua resposta</option>
+                        <option value="Ser poderoso e respeitado">Ser poderoso e respeitado</option> <!-- certa -->
+                        <option value="Conseguir proteger e ajudar os outros">Conseguir proteger e ajudar os outros
+                        </option>
+                        <option value="Viver em paz e sem guerra com ninguém">Viver em paz e sem guerra com ninguém
+                        </option>
+                    </select>
+                    <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
+                </div>
+
+
+                <div class="question" id="q_five" style="display: none;">
+                    <label for="question5">5. Como você enxerga sua relação com as pessoas?</label>
+                    <select name="question5" id="question5" class="select-option" required>
+                        <option value="Selecione sua resposta" selected>Selecione sua resposta</option>
+                        <option value="Benéfica para alcançar meus objetivos"">Benéfica para alcançar meus objetivos</option> <!-- certa -->
+                        <option value=" Endork">Legal por ter com que contar quanto for preciso</option>
+                        <option value="Skeeloe">Não sei, não me relaciono com ninguém</option>
+                    </select>
+                    <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
+                </div>
+
+                <div class="question" id="q_six" style="display: none;">
+                    <label for="question6">6. Qual seu estilo de liderança adequado?</label>
+                    <select name="question6" id="question6" class="select-option" required>
+                        <option value="Selecione sua resposta" disabled selected>Selecione sua resposta</option>
+                        <option value="Liderança autoritária, imposição"">Liderança autoritária, imposição</option> 
+                        <option value=" Liderança Democrática">Liderança Democrática</option>
+
+                    </select>
+                    <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
+                </div>
+
+                <div class="question" id="q_seven" style="display: none;">
+                    <label for="question7">7. Se uma pessoa comete um crime hediondo, qual seria seu destino
+                        adequado?</label>
+                    <select name="question7" id="question7" class="select-option" required>
+                        <option value="Selecione sua resposta" disabled selected>Selecione sua resposta</option>
+                        <option value="Não existe justiça para tais atos!"">Não existe justiça para tais atos!</option> 
+                        <option value=" Os fatos devem ser analisados para uma tomada justa de decisões">Os fatos devem
+                            ser analisados para uma tomada justa de decisões</option>
+                    </select>
+                    <button class="btn_quizz" onclick="cadastrar_quizz()">Ver pontuação</button>
+                </div>
+
+                <div id="div_pontuacao" style="display: none;"></div>
+
+                <div id="img_pontos" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="logo-icons">
+                <img src="../assets/imgs/logo (4).png" alt="">
+                <div class="icons">
+                    <i style="color: white;" class="fa fa-facebook"></i>
+                    <i style="color: white;" class="fa fa-instagram"></i>
+                    <i style="color: white;" class="fa fa-youtube"></i>
+                    <i style="color: white;" class="fa fa-twitter"></i>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="column">
+                    <h1>Institucional</h1>
+                    <a href="contactUs.html">Contact Us</a>
+                    <a href="login.html">Login</a>
+                    <a href="cadastro.html">Cadastro</a>
+                </div>
+                <div class="column">
+                    <h1>Have Fun!</h1>
+                    <a href="recomendacoes.html">Recomendações</a>
+                    <a href="quizzes.html">Quizzes</a>
+                    <a href="home.html">Home</a>
+                </div>
+                <div class="column">
+                    <h1>Menu</h1>
+                    <a href="personagens.html">Personagens</a>
+                    <a href="filmes.html">Filmes</a>
+                    <a href="endor.html">Planetas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    // variaveis p/ pontuação
+    var contador = 0
+
+    // vaariaveis para validar o quizz
+    var maisJedi = 0
+    var maisSith = 0
+
+
+    function responder() {
+        var resposta1 = question1.value;
+        var resposta2 = question2.value;
+        var resposta3 = question3.value;
+        var resposta4 = question4.value;
+        var resposta5 = question5.value;
+        var resposta6 = question6.value;
+        var resposta7 = question7.value;
+
+        if (contador == 0) {
+            //questao 1
+            if (resposta1 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                if (resposta1 == "As emoções devem ser controladas e mantidas sob controle.") {
+                    maisJedi++
+                } else if (resposta1 == "As emoçoes devem ser usadas para orietar nossas decisões.") {
+                    maisJedi++
+                } else {
+                    maisSith++
+                }
+                q_one.style.display = 'none'
+                q_two.style.display = 'flex'
+            }
+        }
+
+        if (contador == 1) {
+
+            if (resposta2 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 2
+                if (resposta2 == "Vermelho") {
+                    maisSith += 1
+                }
+
+                if (resposta2 == "Verde") {
+                    maisJedi += 1
+                }
+
+                if (resposta2 == "Roxo") {
+                    maisJedi += 1
+                }
+                q_two.style.display = 'none'
+                q_three.style.display = 'flex'
+            }
+
+
+        } else if (contador == 2) {
+
+            if (resposta3 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 3
+                if (resposta3 == "Determinada e entusiasmada") {
+                    maisJedi += 1
+                }
+
+                if (resposta3 == "Calma e resiliente") {
+                    maisJedi += 1
+                }
+
+                if (resposta3 == "Intensa e Temperamental") {
+                    maisSith += 1
+                }
+                q_three.style.display = 'none'
+                q_four.style.display = 'flex'
+            }
+
+        } else if (contador == 3) {
+
+            if (resposta4 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 4
+                if (resposta4 == "Ser poderoso e respeitado") {
+                    maisSith += 1
+                }
+
+                if (resposta4 == "Conseguir proteger e ajudar os outros") {
+                    maisJedi += 1
+                }
+
+                if (resposta4 == "Viver em paz e sem guerra com ninguém") {
+                    maisJedi += 1
+                }
+                q_four.style.display = 'none'
+                q_five.style.display = 'flex'
+            }
+
+        } else if (contador == 4) {
+            if (resposta5 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 5
+                if (resposta5 == "Benéfica para alcançar meus objetivos") {
+                    maisSith += 1
+                }
+
+                if (resposta5 == "Legal por ter com que contar quanto for preciso") {
+                    maisJedi += 1
+                }
+
+                if (resposta5 == "Não sei, não me relaciono com ninguém") {
+                    maisSith += 1
+                }
+                q_five.style.display = 'none'
+                q_six.style.display = 'flex'
+            }
+
+        } else if (contador == 5) {
+            if (resposta6 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 6
+                if (resposta6 == "Liderança autoritária, imposição") {
+                    maisSith += 1
+                }
+
+                if (resposta6 == "Liderança Democrática") {
+                    maisJedi += 1
+                }
+
+                q_six.style.display = 'none'
+                q_seven.style.display = 'flex'
+            }
+
+        } else if (contador == 6) {
+            if (resposta7 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta7 == "Não existe justiça para tais atos!") {
+                    maisSith += 1
+                }
+
+                if (resposta7 == "Os fatos devem ser analisados para uma tomada justa de decisões") {
+                    maisJedi += 1
+                }
+            }
+        }
+        contador++
+    }
+
+    function cadastrar_quizz() {
+
+        var resposta7 = question7.value;
+
+        if (resposta7 == "Selecione sua resposta") {
+            alert('Selecione uma resposta')
+        } else {
+            //questao 7
+            if (resposta7 == "Não existe justiça para tais atos!") {
+                maisSith += 1
+            }
+
+            if (resposta7 == "Os fatos devem ser analisados para uma tomada justa de decisões") {
+                maisJedi += 1
+            }
+        }
+
+        if (maisJedi > maisSith) {
+            div_pontuacao.style.color = "blue"
+            img_pontos.innerHTML = `<img src="../assets/imgs/about.png" width="100px" height="100px" alt="">`
+            div_pontuacao.innerHTML = "Você é mais Jedi"
+
+        } else if (maisJedi == maisSith) {
+            div_pontuacao.style.color = "orange"
+            div_pontuacao.innerHTML = "Você está confuso sobre você mesmo!"
+
+        } else {
+            div_pontuacao.style.color = "red"
+            div_pontuacao.innerHTML = "Você é mais Sith"
+        }
+
+        q_seven.style.display = 'none'
+        div_pontuacao.style.display = "flex"
+
+        ///////////////////////////////////////////////////////////////////////
+
+        // aguardar();
+
+        var idUser = sessionStorage.getItem("ID_USUARIO");
+        console.log(idUser)
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+
+        fetch("/usuarios/cadastrar_quizz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                JediServer: maisJedi,
+                SithServer: maisSith,
+                idServer: idUser
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            //colocar negocio
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
+
+    }
+
+        // Enviando o valor da nova input
+
+</script>

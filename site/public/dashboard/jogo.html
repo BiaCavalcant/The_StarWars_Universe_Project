@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo da Memória | The Star Wars Universe</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    
+    <link rel="icon" href="../assets/icon/favicon.ico">
+    <link rel="stylesheet" href="../css/style_news.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="noticia">
+      <div class="header">
+        <ul class="nav-bar">
+          <li ><a href="home.html">HOME</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">HAVE FUN</a>
+            <div class="dropdown-content">
+              <a href="endor.html">PLANETAS</a>
+              <a href="personagens.html">PERSONAGENS</a>
+              <a href="filmes.html">FILMES</a>
+              <a href="recomendacoes.html">RECOMENDAÇÕES</a>
+            </div>
+          </li>
+          <li><a href="quizzes.html">QUIZZES</a></li>
+          <li><img style="margin-top: -25px;" width="140px" height="60px" src="../assets/imgs/logo (4).png" alt=""></li>
+          
+          <li><a href="contactUs.html">CONTACT US</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li style="margin-left: -20px;" id="user-li">
+            <a class="li-user" href="profile.html" >
+                <li class="fa fa-user-o">PERFIL</li>
+                
+            </a>
+          </li>
+        </ul>
+        </div>
+    
+    </div>
+    <div class="noticia" id="centralizar">
+        <div class="header-quizz">
+            <h1>MEMORY GAME</h1>
+            <p style="text-align: center;">Bem vindo ao jogo da memória de Star Wars, uma das sagas mais icônicas do cinema!</p>
+        </div>  
+        <div class="content-quizz">
+            <button onclick="jogar()" id="btn-jogar">JOGAR</button>
+            <div id="painel-game">
+                <div id="cards-game">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="logo-icons">
+          <img src="../assets/imgs/logo (4).png" alt="">
+          <div class="icons">
+            <i style="color: white;" class="fa fa-facebook"></i>
+            <i style="color: white;" class="fa fa-instagram"></i>
+            <i style="color: white;" class="fa fa-youtube"></i>
+            <i style="color: white;" class="fa fa-twitter"></i>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="column">
+            <h1>Institucional</h1>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastro</a>
+          </div>
+          <div class="column">
+            <h1>Have Fun!</h1>
+            <a href="recomendacoes.html">Recomendações</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="home.html">Home</a>
+          </div>
+          <div class="column">
+            <h1>Menu</h1>
+            <a href="personagens.html">Personagens</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="endor.html">Planetas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</body>
+
+</html>
+
+<script>
+    var buton = document.getElementById("btn-jogar")
+    var painel = document.getElementById("painel-game")
+    function jogar(){
+        buton.style.display = "none" //desaparece o botão
+        painel.style.display = "block" //aparece o painel
+    }
+    var lista_cards = [ //array das img
+        '<img src="https://www.estudarfora.org.br/wp-content/uploads/2018/05/cursos-sobre-Star-Wars-1.jpg" width="150px" height="100px" alt="">',
+
+        '<img src="https://files.tecnoblog.net/wp-content/uploads/2021/07/7-jogos-de-Star-Wars-para-baixar-no-PC-e-consoles-tommy-van-kessel-unsplash.jpg" width="150px" height="100px" alt="">',
+
+        '<img src="https://conteudo.imguol.com.br/c/splash/a1/2020/09/09/daisy-ridley-como-a-personagem-rey-em-star-wars-a-ascensao-skywalker-1599678518570_v2_1x1.jpg" width="150px" height="100px" alt="">',
+
+        '<img src="https://s2.glbimg.com/E0XKSMXcuU7Ep7sARiSr0whAV-M=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/k/6/oePBHfQhOA0NMvjanrhg/51.png" width="150px" height="100px" alt="">',
+
+        '<img src="https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2022/05/03/swp_capa-1hr8n9b7ucjmp.jpg" width="150px" height="100px" alt="">'
+    ]
+
+
+        for (var i = 0; i < lista_cards.length; i++){
+            painel.innerHTML += lista_cards[i];
+            
+            if (i % 5 == 0){
+                lista_cards.innerHTML += '<br>'
+            }
+        }
+        
+        for (var i = 0; i < lista_cards.length; i++){
+            painel.innerHTML += lista_cards[i];
+            
+            if (i % 5 == 0){
+                lista_cards.innerHTML += '<br>'
+            }
+        }
+
+
+</script>
