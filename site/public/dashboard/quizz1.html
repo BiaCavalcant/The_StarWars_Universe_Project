@@ -61,12 +61,12 @@
                 Que a Força esteja com você!</p>
         </div>
         <div class="content-quizz">
-            <h1>Responda às questões abaixo</h1>
-
+           
             <div class="form-quizz">
 
                 <div class="question" id="q_one">
                     <label for="question1">1. Quem treinou Qui-Gon Jinn?</label>
+                    <div class="img-question" id="img-question1-q1"></div>
                     <select name="question1" id="question1" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
                         <option value="Conde Dookan">Conde Dookan</option> <!-- certa -->
@@ -78,6 +78,7 @@
 
                 <div class="question" id="q_two" style="display: none;">
                     <label for="question2">2. Qual o nome da arma de Han Solo?</label>
+                    <div class="img-question" id="img-question2-q1"></div>
                     <select name="question2" id="question2" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
                         <option value="H2-V5">H2-V5</option>
@@ -89,6 +90,7 @@
 
                 <div class="question" id="q_three" style="display: none;">
                     <label for="question3">3. Qual o nome completo de Palpatine?</label>
+                    <div class="img-question" id="img-question3-q1"></div>
                     <select name="question3" id="question3" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
                         <option value="Sheev Palpatine">Sheev Palpatine</option> <!-- certa -->
@@ -100,6 +102,7 @@
 
                 <div class="question" id="q_four" style="display: none;">
                     <label for="question4">4. Quem é o traidor na Nova República?</label>
+                    <div class="img-question" id="img-question4-q1"></div>
                     <select name="question4" id="question4" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
                         <option value="Imperador Palpatine">Imperador Palpatine</option> <!-- certa -->
@@ -111,10 +114,11 @@
 
                 <div class="question" id="q_five" style="display: none;">
                     <label for="question5">5. Qual a raça de Darth Maul?</label>
+                    <div class="img-question" id="img-question5-q1"></div>
                     <select name="question5" id="question5" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Zabrak"">Zabrak</option> <!-- certa -->
-                        <option value=" Endork">Endork</option>
+                        <option value="Zabrak">Zabrak</option> <!-- certa -->
+                        <option value="Endork">Endork</option>
                         <option value="Skeeloe">Skeeloe</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
@@ -122,10 +126,11 @@
 
                 <div class="question" id="q_six" style="display: none;">
                     <label for="question6">6. Em que ano foi lançado o primeiro filme?</label>
+                    <div class="img-question" id="img-question6-q1"></div>
                     <select name="question6" id="question6" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="1965"">1965</option> 
-                        <option value=" 1980">1980</option>
+                        <option value="1965">1965</option> 
+                        <option value="1980">1980</option>
                         <option value="1977">1977</option> <!-- certa -->
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
@@ -133,10 +138,11 @@
 
                 <div class="question" id="q_seven" style="display: none;">
                     <label for="question7">7. Quem é o criador da saga?</label>
+                    <div class="img-question" id="img-question7-q1"></div>
                     <select name="question7" id="question7" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">Daniel Craig</option> 
-                        <option value=" Joseph Gordon">Joseph Gordon</option>
+                        <option value="Daniel Craig">Daniel Craig</option> 
+                        <option value="Joseph Gordon">Joseph Gordon</option>
                         <option value="George Lucas">George Lucas</option> <!-- certa -->
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
@@ -144,11 +150,12 @@
 
                 <div class="question" id="q_eight" style="display: none;">
                     <label for="question8">8. Kylo Ren é filho de...?</label>
+                    <div class="img-question" id="img-question8-q1"></div>
                     <select name="question8" id="question8" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">Darth Vader e Padmé</option> 
-                        <option value=" Joseph Gordon">Han solo e Leia</option> <!-- certa -->
-                        <option value="George Lucas">Luke Skywalker e Leia</option>
+                        <option value="Darth Vader e Padmé">Darth Vader e Padmé</option> 
+                        <option value="Han solo e Leia">Han solo e Leia</option> <!-- certa -->
+                        <option value="Luke Skywalker e Leia">Luke Skywalker e Leia</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
@@ -156,11 +163,12 @@
                 <div class="question" id="q_nine" style="display: none;">
                     <label for="question9">9. Qual é o nome do astromecânico que acompanhava Luke Skywalker em suas
                         aventuras?</label>
+                    <div class="img-question" id="img-question9-q1"></div>
                     <select name="question9" id="question9" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">C3PO</option> 
-                        <option value=" Joseph Gordon">R2-D2</option> <!-- certa -->
-                        <option value="George Lucas">HK-50</option>
+                        <option value="C3PO">C3PO</option> 
+                        <option value="R2-D2">R2-D2</option> <!-- certa -->
+                        <option value="HK-50">HK-50</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
@@ -168,70 +176,80 @@
                 <div class="question" id="q_ten" style="display: none;">
                     <label for="question10">10. Qual é o nome do planeta onde Obi-Wan Kenobi exilou-se após a queda da
                         República Galáctica?</label>
+                    <div class="img-question" id="img-question10-q1"></div>
                     <select name="question10" id="question10" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">Bespin</option> 
-                        <option value=" Joseph Gordon">Alderaan</option>
-                        <option value="George Lucas">Tatooine</option> <!-- certa -->
+                        <option value="Bespin">Bespin</option> 
+                        <option value="Alderaan">Alderaan</option>
+                        <option value="Tatooine">Tatooine</option> <!-- certa -->
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
 
                 <div class="question" id="q_eleven" style="display: none;">
                     <label for="question11">11. Quem Darth maul matou para conseguir o sabre negro?</label>
+                    <div class="img-question" id="img-question11-q1"></div>
                     <select name="question11" id="question11" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">Boba Fett</option> 
-                        <option value=" Joseph Gordon">Bo-Katan</option>
-                        <option value="George Lucas">Paz Viszla</option> <!-- certa -->
+                        <option value="Boba Fett">Boba Fett</option> 
+                        <option value="Bo-Katan">Bo-Katan</option>
+                        <option value="Paz Viszla">Paz Viszla</option> <!-- certa -->
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
 
                 <div class="question" id="q_twelve" style="display: none;">
                     <label for="question12">12. O tipo de sabre de luz proibido pela ordem Jedi é?</label>
+                    <div class="img-question" id="img-question12-q1"></div>
                     <select name="question12" id="question12" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">Sabre Curvo</option> 
-                        <option value=" Joseph Gordon">Sabre Duplo</option> <!-- certa -->
-                        <option value="George Lucas">Sabre Cruzado</option>
+                        <option value="Sabre Curvo">Sabre Curvo</option> 
+                        <option value="Sabre Duplo">Sabre Duplo</option> <!-- certa -->
+                        <option value="Sabre Cruzado">Sabre Cruzado</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
 
                 <div class="question" id="q_treze" style="display: none;">
                     <label for="question13">13. Darth Vader caracteriza-se como um...?</label>
+                    <div class="img-question" id="img-question13-q1"></div>
                     <select name="question13" id="question13" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">Protagonista</option> 
-                        <option value=" Joseph Gordon">Antagonista</option> <!-- certa -->
-                        <option value="George Lucas">Vilão Principal da Saga</option>
+                        <option value="Protagonista">Protagonista</option> 
+                        <option value="Antagonista">Antagonista</option> <!-- certa -->
+                        <option value="Herói">Herói</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
 
                 <div class="question" id="q_fourteen" style="display: none;">
                     <label for="question14">14. Quantas estrelas da morte exisitam?</label>
+                    <div class="img-question" id="img-question14-q1"></div>
                     <select name="question14" id="question14" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">Quatro</option> 
-                        <option value=" Joseph Gordon">Duas</option> <!-- certa -->
-                        <option value="George Lucas">Uma</option>
+                        <option value="Quatro">Quatro</option> 
+                        <option value="Duas">Duas</option> <!-- certa -->
+                        <option value="Uma">Uma</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
 
                 <div class="question" id="q_fifteen" style="display: none;">
                     <label for="question15">15. A Guerra dos Clones foi travada entre...?</label>
+                    <div class="img-question" id="img-question15-q1"></div>
                     <select name="question15" id="question15" class="select-option" required>
                         <option value="Selecione sua resposta">Selecione sua resposta</option>
-                        <option value="Daniel Craig"">A primeira ordem e a resistência</option> 
-                        <option value=" Joseph Gordon">A república galáctica e a confederação separatista</option>
+                        <option value="A primeira ordem e a resistência">A primeira ordem e a resistência</option> 
+                        <option value="A república galáctica e a confederação separatista">A república galáctica e a confederação separatista</option>
                         <!-- certa -->
-                        <option value="George Lucas">A nova república e a primeira ordem</option>
+                        <option value="A nova república e a primeira ordem">A nova república e a primeira ordem</option>
                     </select>
-                    <button class="btn_quizz" onclick="pontuacao()">Ver Pontuação</button>
+                    <button class="btn_quizz" onclick="cadastrar_quizz2()">Ver Pontuação</button>
                 </div>
+
+                <div id="div_pontuacao" style="display: none;">
+                </div>
+
             </div>
         </div>
     </div>
@@ -275,67 +293,7 @@
 </html>
 
 <script>
-    function pontuacao() {
-        // puxando o valor dos options
-        var resposta1 = question1.value;
-        var resposta2 = question2.value;
-        var resposta3 = question3.value;
-        var resposta4 = question4.value;
-        var resposta5 = question5.value;
-        var resposta6 = question6.value;
-        var resposta7 = question7.value;
-        var resposta8 = question8.value;
-        var resposta9 = question9.value;
-        var resposta10 = question10.value;
-        var resposta11 = question11.value;
-        var resposta12 = question12.value;
-        var resposta13 = question13.value;
-        var resposta14 = question14.value;
-        var resposta15 = question15.value;
-
-        // iniciando a pontuação com 0 p ser incrementada a cada acerto
-        var pontuacao = 0;
-
-        if (resposta1 === 'Selecione sua resposta' || resposta2 === 'Selecione sua resposta' || resposta3 === 'Selecione sua resposta' || resposta4 === 'Selecione sua resposta' || resposta5 === 'Selecione sua resposta' || resposta6 === 'Selecione sua resposta' || resposta7 === 'Selecione sua resposta' || resposta8 === 'Selecione sua resposta' || resposta9 === 'Selecione sua resposta' || resposta10 === 'Selecione sua resposta' || resposta11 === 'Selecione sua resposta' || resposta12 === 'Selecione sua resposta' || resposta13 === 'Selecione sua resposta' || resposta14 === 'Selecione sua resposta' || resposta15 === 'Selecione sua resposta') {
-            alert('Por favor, responda todas as perguntas.');
-
-
-        }
-
-        if (resposta1 === 'Conde Dookan') {
-            pontuacao++; //incremento da pontuação
-        }
-
-        if (resposta2 === 'DL-44') {
-            pontuacao++;
-        }
-
-        if (resposta3 === 'Sheev Palpatine') {
-            pontuacao++;
-        }
-
-        if (resposta4 === 'Imperador Palpatine') {
-            pontuacao++;
-        }
-
-        if (resposta5 === 'Zabrak') {
-            pontuacao++;
-        }
-
-        if (resposta6 === '1977') {
-            pontuacao++;
-        }
-
-        if (resposta7 === 'George Lucas') {
-            pontuacao++;
-        }
-
-        // exibindo a pontuação
-        alert(`Você acertou ${pontuacao} de 7 perguntas.`);
-    }
-
-
-
+    
     // variaveis p/ pontuação
     var contador = 0
 
@@ -353,13 +311,13 @@
         var resposta6 = question6.value;
         var resposta7 = question7.value;
         var resposta8 = question8.value;
-        var resposta9 = question7.value;
-        var resposta10 = question7.value;
-        var resposta11 = question7.value;
-        var resposta12 = question7.value;
-        var resposta13 = question7.value;
-        var resposta14 = question7.value;
-        var resposta15 = question7.value;
+        var resposta9 = question9.value;
+        var resposta10 = question10.value;
+        var resposta11 = question11.value;
+        var resposta12 = question12.value;
+        var resposta13 = question13.value;
+        var resposta14 = question14.value;
+        var resposta15 = question15.value;
 
         if (contador == 0) {
             //questao 1
@@ -410,12 +368,12 @@
                     acertos++
                 }
 
-                if (resposta3 == "Calma e resiliente") {
-                    maisJedi += 1
+                if (resposta3 == "Thrawn Palpatine") {
+                    erros++
                 }
 
-                if (resposta3 == "Intensa e Temperamental") {
-                    maisSith += 1
+                if (resposta3 == "Mace Palpatine") {
+                    erros++
                 }
                 q_three.style.display = 'none'
                 q_four.style.display = 'flex'
@@ -427,16 +385,16 @@
                 alert('Selecione uma resposta')
             } else {
                 //questao 4
-                if (resposta4 == "Ser poderoso e respeitado") {
-                    maisSith += 1
+                if (resposta4 == "Imperador Palpatine") {
+                    acertos++
                 }
 
-                if (resposta4 == "Conseguir proteger e ajudar os outros") {
-                    maisJedi += 1
+                if (resposta4 == "Os Clones") {
+                    erros++
                 }
 
-                if (resposta4 == "Viver em paz e sem guerra com ninguém") {
-                    maisJedi += 1
+                if (resposta4 == "Anakin Skywalker") {
+                    erros++
                 }
                 q_four.style.display = 'none'
                 q_five.style.display = 'flex'
@@ -447,16 +405,16 @@
                 alert('Selecione uma resposta')
             } else {
                 //questao 5
-                if (resposta5 == "Benéficas para alcançar meus objetivos") {
-                    maisSith += 1
+                if (resposta5 == "Zabrak") {
+                    acertos += 1
                 }
 
-                if (resposta5 == "Legal por ter com que contar quanto for preciso") {
-                    maisJedi += 1
+                if (resposta5 == "Endork") {
+                    erros += 1
                 }
 
-                if (resposta5 == "Não sei, não me relaciono com ninguém") {
-                    maisSith += 1
+                if (resposta5 == "Skeeloe") {
+                    erros += 1
                 }
                 q_five.style.display = 'none'
                 q_six.style.display = 'flex'
@@ -467,12 +425,16 @@
                 alert('Selecione uma resposta')
             } else {
                 //questao 6
-                if (resposta6 == "Liderança autoritária, imposição") {
-                    maisSith += 1
+                if (resposta6 == "1965") {
+                    erros += 1
                 }
 
-                if (resposta6 == "Liderança Democrática") {
-                    maisJedi += 1
+                if (resposta6 == "1980") {
+                    erros += 1
+                }
+
+                if (resposta6 == "1977") {
+                    acertos += 1
                 }
 
                 q_six.style.display = 'none'
@@ -484,22 +446,240 @@
                 alert('Selecione uma resposta')
             } else {
                 //questao 7
-                if (resposta7 == "Não existe justiça para tais atos!") {
-                    maisSith += 1
+                if (resposta7 == "Daniel Craig") {
+                    erros += 1
                 }
 
-                if (resposta7 == "Os fatos devem ser analisados para uma tomada justa de decisões") {
-                    maisJedi += 1
+                if (resposta7 == "Joseph Gordon") {
+                    erros += 1
+                }
+
+                if (resposta7 == "George Lucas") {
+                    acertos += 1
+                }
+
+                q_seven.style.display = 'none'
+                q_eight.style.display = 'flex'
+            }
+        }else if (contador == 7) {
+            if (resposta8 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta8 == "Darth Vader e Padmé") {
+                    erros += 1
+                }
+
+                if (resposta8 == "Han solo e Leia") {
+                    acertos += 1
+                }
+
+                if (resposta8 == "Luke Skywalker e Leia") {
+                    erros += 1
+                }
+
+                q_eight.style.display = 'none'
+                q_nine.style.display = 'flex'
+            }
+        }else if (contador == 8) {
+            if (resposta9 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta9 == "C3PO") {
+                    erros += 1
+                }
+
+                if (resposta9 == "R2-D2") {
+                    acertos += 1
+                }
+
+                if (resposta9 == "HK-50") {
+                    erros += 1
+                }
+
+                q_nine.style.display = 'none'
+                q_ten.style.display = 'flex'
+            }
+        } else if (contador == 9) {
+            if (resposta10 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta10 == "Bespin") {
+                    erros += 1
+                }
+
+                if (resposta10 == "Tatooine") {
+                    acertos += 1
+                }
+
+                if (resposta10 == "Alderaan") {
+                    erros += 1
+                }
+
+                q_ten.style.display = 'none'
+                q_eleven.style.display = 'flex'
+            }
+        } else if (contador == 10) {
+            if (resposta11 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta11 == "Boba Fett") {
+                    erros += 1
+                }
+
+                if (resposta11 == "Bo-Katan") {
+                    erros += 1
+                }
+
+                if (resposta11 == "Paz Viszla") {
+                    acertos += 1
+                }
+
+                q_eleven.style.display = 'none'
+                q_twelve.style.display = 'flex'
+            }
+        } else if (contador == 11) {
+            if (resposta12 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta12 == "Sabre Curvo") {
+                    erros += 1
+                }
+
+                if (resposta12 == "Sabre Duplo") {
+                    acertos += 1
+                }
+
+                if (resposta12 == "Sabre Curvado") {
+                    erros += 1
+                }
+
+                q_twelve.style.display = 'none'
+                q_treze.style.display = 'flex'
+            }
+        } else if (contador == 12) {
+            if (resposta13 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta13 == "Protagonista") {
+                    erros += 1
+                }
+
+                if (resposta13 == "Antagonista") {
+                    acertos += 1
+                }
+
+                if (resposta13 == "Herói") {
+                    erros += 1
+                }
+
+                q_treze.style.display = 'none'
+                q_fourteen.style.display = 'flex'
+            }
+        } else if (contador == 13) {
+            if (resposta14 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta14 == "Quatro") {
+                    erros += 1
+                }
+
+                if (resposta14 == "Duas") {
+                    acertos += 1
+                }
+
+                if (resposta14 == "Uma") {
+                    erros += 1
+                }
+
+                q_fourteen.style.display = 'none'
+                q_fifteen.style.display = 'flex'
+            }
+        } else if (contador == 14) {
+            if (resposta15 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta15 == "A primeira ordem e a resistência") {
+                    erros += 1
+                }
+
+                if (resposta15 == "A república galáctica e a confederação separatista") {
+                    acertos += 1
+                }
+
+                if (resposta15 == "A nova república e a primeira ordem") {
+                    erros += 1
                 }
             }
-
-
         }
         contador++
     }
 
 
-    function finalizar() {
+    function cadastrar_quizz2() {
+      
+        var resposta15 = question15.value;
+            if (resposta15 == "Selecione sua resposta") {
+                alert('Selecione uma resposta')
+            } else {
+                //questao 7
+                if (resposta15 == "A primeira ordem e a resistência") {
+                    erros += 1
+                }
+
+                if (resposta15 == "A república galáctica e a confederação separatista") {
+                    acertos += 1
+                }
+
+                if (resposta15 == "A nova república e a primeira ordem") {
+                    erros += 1
+                }
+            }
+
+            q_fifteen.style.display = 'none'
+            div_pontuacao.style.display = "flex"
+            div_pontuacao.innerHTML = `Você acertou ${acertos}/15!`
+
+
+            ///////////////////////////////////////////////////////////
+
+            // aguardar();
+
+        var idUser = sessionStorage.getItem("ID_USUARIO");
+        console.log(idUser)
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+
+        fetch("/usuarios/cadastrar_quizz2", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                acertosServer: acertos,
+                errosServer: erros,
+                idServer: idUser
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            //colocar negocio
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+
 
     }
 

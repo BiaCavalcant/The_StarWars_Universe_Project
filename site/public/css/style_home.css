@@ -682,12 +682,13 @@
     flex-direction: column;
     text-align: center;
     color: #ffffff;
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 .header-perso-content h1 {
     font-size: x-large;
     font-weight: 200;
+    margin-top: 5%;
 }
 
 .cards-personagens {

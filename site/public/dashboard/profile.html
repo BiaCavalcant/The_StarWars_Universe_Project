@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <title>Perfil | The Star Wars Universe</title>
 
@@ -17,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body onload="validarSessao()">
   
     <div class="noticia">
       <div class="header">
@@ -60,16 +62,15 @@
 
                         <div class="info-content">
                             <div class="info-user">
-                                <i class="fa-solid fa-user"></i>
                                 <span id="span_name"></span>
                             </div>
                             <div class="info-user">
-                                <i class="fa-solid fa-envelope"></i><span  id="span_user"></span>
+                                <span id="span_user"></span>
                             </div>
                             
                         </div>
                         <div class="logoff">
-                            <a style="color: white; text-decoration: none;" href="../index.html"><i class="fa-solid fa-right-to-bracket"></i>Logoff</a>
+                            <a onclick="limparSessao()" style="color: white; text-decoration: none;" href="../index.html"><i class="fa-solid fa-right-to-bracket"></i>Logoff</a>
                         </div>
                         
                         
@@ -79,7 +80,12 @@
                 </div>
                 <div class="section-right">
                   <div class="section-right-header">
-                
+                   <h1> Seu desempenho</h1>
+                  </div>
+                  <div class="section-right-content">
+                    <div class="dashboard1">
+                      <canvas id="myChart"></canvas>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -136,7 +142,37 @@
   span_user.innerHTML = `${sessionStorage.EMAIL_USUARIO}`
   span_name.innerHTML = `${sessionStorage.NOME_USUARIO}`
 
-  // if(span_name == 'undefined'){
-  //   span_name.innerHTML = "Ainda não cadastrou o nome"
-  // }
+  if(span_name == 'undefined'){
+    span_name.innerHTML = "Precisa fazer Login!"
+  }
+
+  ////////////////////// GRAFICOS
+
+  const ctx = document.getElementById('myChart');
+
+  ctx.style.borderDash = '0px'
+  
+  new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+      labels: [
+        'Acertos',
+        'Erros',
+        'Jedi',
+        'Sith'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [11, 3, 6, 1],
+        backgroundColor: [
+          'yellow',
+          'red',
+          'purple',
+          'red'
+        ]
+      }]
+    }
+    
+    }
+  );
 </script>
