@@ -358,8 +358,9 @@
 .content-quizz{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 110vh;
     width: 80%;
+    justify-content: center;
     align-items: center;
     color: rgb(252, 252, 252);
     background-color: #000000;
@@ -611,10 +612,77 @@ select, option{
     width: 100%;
     font-size: 50px;
     justify-content: center;
-    align-items: center;
-    height: 70vh;
-    background-color: #2C2C2C;
+    height: 105vh;
+    flex-direction: column;
     margin-bottom: 3%;
+  }
+
+  #div_pontuacao p{
+    font-size: medium;
+    margin-top: 2%;
+  }
+
+  #div_pontuacao a{
+    text-decoration: none;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    color: #F9FFB5;
+  }
+
+  #div_pontuacao a:hover{
+    color: #93966b;
+    transition: 0.5s ease-in-out;
+  }
+
+
+  #img_jedi{
+    height: 70vh;
+    width: 100%;
+    background-image: url('../assets/imgs/imgJedi.jpg');
+    background-position: 00%;
+    background-size: cover;
+  }
+
+  #img_sith{
+    height: 70vh;
+    width: 100%;
+    background-image: url('../assets/imgs/img_sith.webp');
+    background-position: 00%;
+    background-size: cover;
+  }
+
+  .btn_refazer {
+    border-style: none;
+    height: 7vh;
+    width: 30%;
+    border-radius: 50px 50px;
+    font-size: 16px;
+    align-self: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 2%;
+  }
+
+  #refazer{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    align-self: center;
+  }
+
+  .btn_refazer:hover{
+    transition: 0.4s ease-in-out;
+    color: white;
+    background-color: #12121200;
+    border: 2px solid white;
+   
   }
 
   .content-quizzz{

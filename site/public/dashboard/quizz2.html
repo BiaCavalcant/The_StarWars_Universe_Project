@@ -62,7 +62,7 @@
         <div class="content-quizz">
             <div class="form-quizz">
 
-                <div class="question" id="q_one">
+                <div class="question" id="q_one" style="display: flex;">
                     <label for="question1">1. Qual é a sua opinião sobre o uso de emoções na tomada de decisões?</label>
                     <div class="img-question" id="img-question1"></div>
                     <select name="question1" id="question1" class="select-option" required>
@@ -75,6 +75,7 @@
                             algumas situações.</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
+                   
                 </div>
 
                 <div class="question" id="q_two" style="display: none;">
@@ -122,8 +123,8 @@
                     <select name="question5" id="question5" class="select-option" required>
                         <option value="Selecione sua resposta" selected>Selecione sua resposta</option>
                         <option value="Benéfica para alcançar meus objetivos"">Benéfica para alcançar meus objetivos</option> <!-- certa -->
-                        <option value=" Endork">Legal por ter com que contar quanto for preciso</option>
-                        <option value="Skeeloe">Não sei, não me relaciono com ninguém</option>
+                        <option value="Legal por ter com que contar quanto for preciso">Legal por ter com que contar quanto for preciso</option>
+                        <option value="Não sei, não me relaciono com ninguém">Não sei, não me relaciono com ninguém</option>
                     </select>
                     <button class="btn_quizz" onclick="responder()">Próxima Questão</button>
                 </div>
@@ -147,7 +148,7 @@
                     <select name="question7" id="question7" class="select-option" required>
                         <option value="Selecione sua resposta" disabled selected>Selecione sua resposta</option>
                         <option value="Não existe justiça para tais atos!"">Não existe justiça para tais atos!</option> 
-                        <option value=" Os fatos devem ser analisados para uma tomada justa de decisões">Os fatos devem
+                        <option value="Os fatos devem ser analisados para uma tomada justa de decisões">Os fatos devem
                             ser analisados para uma tomada justa de decisões</option>
                     </select>
                     <button class="btn_quizz" onclick="cadastrar_quizz()">Ver pontuação</button>
@@ -155,7 +156,6 @@
 
                 <div id="div_pontuacao" style="display: none;"></div>
 
-                <div id="img_pontos" style="display: none;"></div>
             </div>
         </div>
     </div>
@@ -369,17 +369,38 @@
         }
 
         if (maisJedi > maisSith) {
-            div_pontuacao.style.color = "blue"
-            img_pontos.innerHTML = `<img src="../assets/imgs/about.png" width="100px" height="100px" alt="">`
-            div_pontuacao.innerHTML = "Você é mais Jedi"
+            div_pontuacao.style.display = 'flex'
+            div_pontuacao.innerHTML = `
+            
+                    <h1>Você é mais Jedi!</h1>
+                    <div id="img_jedi"></div>
+                    <p>Parabéns! Com base nas suas respostas, fica claro que você possui uma natureza predominantemente Jedi. Assim como os lendários cavaleiros Jedi, você é uma pessoa compassiva, focada no bem-estar dos outros e na busca pela paz. Sua ética moral e valores são fortes, e você se esforça para fazer a coisa certa, mesmo que seja difícil.</p>
+
+                    <p>Você possui uma conexão profunda com a Força e busca constantemente equilíbrio e harmonia em sua vida. Acreditamos que sua empatia e compaixão o impulsionam a ajudar os outros, a resolver conflitos pacificamente e a buscar soluções benéficas para o bem maior.</p>
+
+                    <p><a href="profile.html">Analise seus resultados <i class="fa fa-address-card-o" style="margin-left: 1%;" aria-hidden="true"></i></a></p>
+                    <a id="refazer" href="quizz2.html"><button class="btn_refazer">Refazer Quizz</button></a>
+                
+            `
 
         } else if (maisJedi == maisSith) {
             div_pontuacao.style.color = "orange"
             div_pontuacao.innerHTML = "Você está confuso sobre você mesmo!"
 
         } else {
-            div_pontuacao.style.color = "red"
-            div_pontuacao.innerHTML = "Você é mais Sith"
+            div_pontuacao.style.display = 'flex'
+            div_pontuacao.innerHTML = `
+            
+                    <h1>Você é mais Sith!</h1>
+                    <div id="img_sith"></div>
+                    <p>Parabéns! Com base nas suas respostas, fica claro que você possui uma natureza predominantemente Sith. Assim como os poderosos Lordes Sith, você é ambicioso, determinado e está disposto a fazer o que for necessário para alcançar seus objetivos. Você valoriza sua independência e acredita no poder pessoal como uma força motriz para moldar o destino.</p>
+
+                    <p>Sua personalidade intensa e apaixonada o coloca em contato com o lado sombrio da Força. Você tende a seguir suas próprias regras e tomar decisões baseadas em suas próprias vontades e desejos. A liberdade de expressão e a busca pelo poder são aspectos fundamentais de quem você é.</p>
+
+                    <p><a href="profile.html">Analise seus resultados <i class="fa fa-address-card-o" style="margin-left: 1%;" aria-hidden="true"></i></a></p>
+                    
+                    <a id="refazer" href="quizz2.html"><button class="btn_refazer">Refazer Quizz</button></a>
+            `
         }
 
         q_seven.style.display = 'none'

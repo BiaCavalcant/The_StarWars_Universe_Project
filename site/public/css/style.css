@@ -254,7 +254,6 @@ input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
   background-color: #212124;
   /* border: 3px solid pink; */
 }
@@ -280,7 +279,7 @@ input {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #d2e362;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -291,19 +290,17 @@ input {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  background-color: #e2e600;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white {
   width: 40%;
+  color: rgb(0, 0, 0) !important;
   background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
+  text-align: center; 
   padding: 2% 5%;
 }
 
@@ -322,12 +319,12 @@ input {
 .btn-logout {
   margin: 0;
   padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
-  border-radius: 10px;
+  width: 30%;
+  height: 29px;
+  background-color: #000000;
+  color: white; 
   text-align: center;
-  padding: 10px 15px;
+
   margin-bottom: 100px;
   cursor: pointer;
 }
