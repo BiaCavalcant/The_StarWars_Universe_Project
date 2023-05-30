@@ -35,15 +35,15 @@
             </div>
 
          
-            <div class="btn-nav">
+            <div class="btn-nav-white">
 
-                <h3>Conhecimentos</h3>
+                <a href="profile.html"><h3>Conhecimentos</h3></a>
 
             </div>
 
-            <div class="btn-nav-white">
+            <div class="btn-nav">
 
-                <a href="profile2.html"><h3>Personalidade</h3></a>
+                <h3>Personalidade</h3>
 
             </div>
 
@@ -117,7 +117,7 @@
             </div>
 
             <div class="info_dash" id="info_dash">
-                
+                d
             </div>
         </div>
     </div>
@@ -132,27 +132,25 @@
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    var fkUsuario = sessionStorage.ID_USUARIO
-
     let proximaAtualizacao;
 
-    window.onload = obterDadosGraficos();
+    window.onload = obterDadosGraficos2();
 
-    function obterDadosGraficos() {
-        obterDadosGrafico(1)
-        obterDadosGrafico(2)
+    function obterDadosGraficos2() {
+        obterDadosGrafico2(1)
+        obterDadosGrafico2(2)
         // obterDadosGrafico(3)
         // obterDadosGrafico(4)
     }
 
     // verificar_autenticacao();
 
-    function alterarTitulo(idQuizz) {
+    function alterarTitulo2(idQuizz) {
         var tituloAquario = document.getElementById(`tituloAquario${idQuizz}`)
-        tituloAquario.innerHTML = "Últimas respostas do <span style='color: yellow'>Quizz " + idQuizz + " - Teste de Conhecimento </span>"
+        tituloAquario.innerHTML = "Últimas respostas do <span style='color: yellow'>Quizz 2 - Teste de Personalidade </span>"
     }
 
-    function exibirAquario(idQuizz) {
+    function exibirAquario2(idQuizz) {
         let todosOsGraficos = document.getElementById("graficos")
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
@@ -193,9 +191,9 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function obterDadosGrafico(idQuizz) {
+    function obterDadosGrafico2(idQuizz) {
 
-        alterarTitulo(idQuizz)
+        alterarTitulo2(idQuizz)
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -207,7 +205,7 @@
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, idQuizz);
+                    plotarGrafico2(resposta, idQuizz);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -221,7 +219,7 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idQuizz) {
+    function plotarGrafico2(resposta, idQuizz) {
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -232,17 +230,17 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Acertos',
+                label: 'Mais Jedi',
                 data: [],
                 fill: false,
-                borderColor: 'yellow',
+                borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
             {
-                label: 'Erros',
+                label: 'Mais Sith',
                 data: [],
                 fill: false,
-                borderColor: 'purple',
+                borderColor: 'rgb(199, 52, 52)',
                 tension: 0.1
             }]
         };
@@ -255,8 +253,8 @@
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.acertos);
-            dados.datasets[1].data.push(registro.erros);
+            dados.datasets[0].data.push(registro.jedi);
+            dados.datasets[1].data.push(registro.sith);
         }
 
         console.log('----------------------------------------------')
@@ -279,7 +277,7 @@
             config
         );
 
-        setTimeout(() => atualizarGrafico(idQuizz, dados, myChart), 2000);
+        setTimeout(() => atualizarGrafico2(idQuizz, dados, myChart), 2000);
     }
 
 
@@ -288,9 +286,7 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idQuizz, dados, myChart) {
-
-
+    function atualizarGrafico2(idQuizz, dados, myChart) {
 
         fetch(`/medidas/tempo-real/${idQuizz}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -328,12 +324,12 @@
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idQuizz, dados, myChart), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico2(idQuizz, dados, myChart), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idQuizz, dados, myChart), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico2(idQuizz, dados, myChart), 2000);
             }
         })
             .catch(function (error) {

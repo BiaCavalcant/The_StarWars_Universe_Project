@@ -56,6 +56,8 @@ function buscarUltimasMedidas(idQuizz, limite_linhas) {
 
 function buscarMedidasEmTempoReal(idQuizz) {
 
+    // fkUsuario = sessionStorage.ID_USUARIO
+
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
@@ -84,8 +86,81 @@ function buscarMedidasEmTempoReal(idQuizz) {
     return database.executar(instrucaoSql);
 }
 
+//////////////////////////////////////////////////////////////////////////quizz2
+
+function buscarUltimasMedidas2(idQuizz, limite_linhas) {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+
+        instrucaoSql = `
+            select top ${limite_linhas}
+            maisJedi as jedi,
+            maisSith as sith,
+                    data_hora,
+                    FORMAT(data_hora, 'HH:mm:ss') as momento_grafico
+                from resolucao_quizz
+                where fkQuizz = ${idQuizz} 
+                order by idResolucao desc
+        `;
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+      
+        instrucaoSql = `select 
+        maisJedi as jedi, 
+        maisSith as sith,
+                        data_hora,
+                        DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico
+                    from resolucao_quizz
+                    where fkQuizz = ${idQuizz}
+                    order by idResolucao desc limit ${limite_linhas}`;
+
+
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function buscarMedidasEmTempoReal2(idQuizz) {
+
+    // fkUsuario = sessionStorage.ID_USUARIO
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select top 1
+        maisJedi as jedi, 
+        maisSith as sith,  
+                        CONVERT(varchar, data_hora, 108) as momento_grafico, 
+                        fkQuizz 
+                        from resolucao_quizz where fkQuizz = ${idQuizz} 
+                    order by idResolucao desc`;
+
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select 
+        maisJedi as jedi, 
+        maisSith as sith,
+                        DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico, 
+                        fkQuizz 
+                        from resolucao_quizz where fkQuizz = ${idQuizz} 
+                    order by idResolucao desc limit 1`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarUltimasMedidas2,
+    buscarMedidasEmTempoReal2
 }

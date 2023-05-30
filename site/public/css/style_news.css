@@ -894,3 +894,183 @@ select, option{
   #span_user{
     text-align: center;
   }
+
+  .banner_game{
+    height: 80vh;
+    width: 100%;
+    background-image: url('../assets/imgs/gameback.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner_game h1{
+    color: white;
+    font-size: 100px;
+    mix-blend-mode: soft-light;
+    font-family: Star Wars;
+    font-weight: 100;
+  }
+
+  .game_content p{
+    color: #c3c3c3;
+    text-align: center ;
+    font-size: x-large;
+    width: 70%;
+  }
+
+  #game_sessao{
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gifgame{
+    background-image: url('../assets/imgs/gifgame.gif');
+    width: 50%;
+    background-size: cover;
+    height: inherit;
+    background-position: 200%;
+  }
+
+  .game_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column ;
+    height: 59vh;
+    width: 50%;
+  }
+
+  .game_content button{
+    width: 50%;
+    height: 10vh;
+    border-radius: 50px;
+    background-color: #f6431c;
+    border-style: none;
+    font-size: larger;
+    color: white;
+  }
+  
+  .game_content h1{
+    color: white;
+    font-family: Star Wars;
+  }
+
+  .game_content button:hover{
+    transition: 0.4s ease-in-out;
+    background-color: #12121200;
+    border: 1px solid #f6431c;
+  }
+
+  #game{
+    height: 65vh;
+    width: 100%;
+    display: flex;
+    color: white;
+    flex-direction: column;
+  }
+
+  #counter{
+    color: white;
+  }
+
+  .relogio{
+    width: 20%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 50px;
+  }
+
+  .group_itens{
+    height: 50vh;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .lembrete p{
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .inputbuton{
+    background-color: #000000;
+    height: 20vh;
+    width: 100%;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #input_personagem{
+    width: 50%;
+    height: 7vh;
+    border-radius: 50px;
+    border-style: none;
+    padding-left: 10px;
+  }
+
+  .inputbuton button{
+    height: 6vh;
+    width: 13%;
+    border-radius: 50px;
+    border-style: none;
+
+  }
+
+  .inputbuton button:hover{
+    transition: 0.3s ease-out;
+    transform: scale(1.1);
+  }
+
+  #naoconsigo{
+    background-color: #fc8686;
+  }
+
+  .lembrete span{
+    color: #f6431c;
+  }
+
+  #final_game{
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60vh;
+  }
+
+  #final_game button{
+    width: 100%;
+    height: 7vh;
+    border-radius: 50px;
+    border-style: none;
+    color: black;
+  }
+
+  #final_game button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+  }
+
+  #final_game button:hover{
+    transition: 0.3s ease-in-out;
+    background-color: rgb(19, 76, 19);
+    color: white;
+  }
+
+  #result{
+    color: white;
+  }

@@ -289,23 +289,25 @@ input {
 }
 
 .btn-nav {
-  width: 40%;
+  width: 50%;
   color: rgb(0, 0, 0);
   background-color: #e2e600;
   text-align: center;
   padding: 2% 5%;
+  font-size: smaller;
 }
 
 .btn-nav-white {
-  width: 40%;
+  width: 50%;
   color: rgb(0, 0, 0) !important;
   background-color: white;
   text-align: center; 
   padding: 2% 5%;
+  font-size: smaller;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #000000;
   padding: 0;
   margin: 0;
 }

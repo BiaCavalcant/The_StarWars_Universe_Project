@@ -120,8 +120,12 @@ body {
   top: 0;
   left: 20%;
   background-color: #161618;
-  height: 100vh;
+  height: 150vh;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .regua {
@@ -274,4 +278,13 @@ body {
 canvas {
   width: 100% !important;
   height: 100% !important;
+}
+
+.info_dash{
+  width: 80%;
+  height: 25vh;
+  background-color: #e6005a;
+  align-self: center; 
+  display: flex;
+  margin-top: 5%;
 }
