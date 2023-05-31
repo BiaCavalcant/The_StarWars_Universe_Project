@@ -5,11 +5,11 @@ function buscarUltimasMedidas(req, res) {
     const limite_linhas = 7;
     // const fkUsuario = 
 
-    var idQuizz = req.params.idQuizz;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    medidaModel.buscarUltimasMedidas(idQuizz, limite_linhas).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas(idUsuario, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -25,11 +25,11 @@ function buscarUltimasMedidas(req, res) {
 
 function buscarMedidasEmTempoReal(req, res) {
 
-    var idQuizz = req.params.idQuizz;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`Recuperando medidas em tempo real`);
 
-    medidaModel.buscarMedidasEmTempoReal(idQuizz).then(function (resultado) {
+    medidaModel.buscarMedidasEmTempoReal(idUsuario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -45,14 +45,13 @@ function buscarMedidasEmTempoReal(req, res) {
 
 function buscarUltimasMedidas2(req, res) {
 
-    const limite_linhas = 7;
-    // const fkUsuario = 
+    const limite_linhas = 7; 
 
-    var idQuizz = req.params.idQuizz;
+    var idUsuario = req.params.idQuizz;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    medidaModel.buscarUltimasMedidas2(idQuizz, limite_linhas).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas2(idUsuario, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -68,11 +67,11 @@ function buscarUltimasMedidas2(req, res) {
 
 function buscarMedidasEmTempoReal2(req, res) {
 
-    var idQuizz = req.params.idQuizz;
+    var idUsuario = req.params.idQuizz;
 
     console.log(`Recuperando medidas em tempo real`);
 
-    medidaModel.buscarMedidasEmTempoReal2(idQuizz).then(function (resultado) {
+    medidaModel.buscarMedidasEmTempoReal2(idUsuario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

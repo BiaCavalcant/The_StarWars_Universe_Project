@@ -303,11 +303,15 @@
     height: 70vh;
     background-image: url("../assets/imgs/quizz1.jpeg");
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #quizz2{
-    background-image: url("../assets/imgs/quizz2.jpeg");
+    background-image: url("../assets/imgs/backquizz2.jpg");
     background-size: cover;
+    background-position-x: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -438,6 +442,7 @@ select, option{
 .dropdown {
     position: relative;
     display: inline-block;
+    
   }
   
   .dropdown-content {
@@ -447,7 +452,7 @@ select, option{
     margin-top: 17px;
     text-align: center;
     background-color: #21212191;
-    height: 25vh;
+    height: fit-content;
     border-radius: 16px;
     
   }
@@ -617,9 +622,12 @@ select, option{
     margin-bottom: 3%;
   }
 
+  
+
   #div_pontuacao p{
     font-size: medium;
     margin-top: 2%;
+    text-align: center;
   }
 
   #div_pontuacao a{
@@ -629,7 +637,7 @@ select, option{
     justify-content: center;
     display: flex;
     text-align: center;
-    color: #F9FFB5;
+    color: #000000;
   }
 
   #div_pontuacao a:hover{
@@ -644,6 +652,7 @@ select, option{
     background-image: url('../assets/imgs/imgJedi.jpg');
     background-position: 00%;
     background-size: cover;
+   
   }
 
   #img_sith{
@@ -657,6 +666,7 @@ select, option{
   .btn_refazer {
     border-style: none;
     height: 7vh;
+    color: black;
     width: 30%;
     border-radius: 50px 50px;
     font-size: 16px;
@@ -666,12 +676,20 @@ select, option{
     align-items: center;
     margin-top: 2%;
   }
+  .btn_refazer a{
+    color: black;
+  }
+
+  #yellow{
+    color: #F9FFB5;
+  }
 
   #refazer{
     width: 100%;
     text-align: center;
     justify-content: center;
     display: flex;
+    color: black;
     align-items: center;
     text-decoration: none;
     align-self: center;
@@ -1073,4 +1091,61 @@ select, option{
 
   #result{
     color: white;
+  }
+
+  #before_quizz{
+    width: 80%;
+    height: 60vh;
+    background-color: #000;
+    margin-bottom: 3%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+
+  #before_quizz h1{
+    margin-top: 2%;
+    font-family: Star Wars;
+  }
+
+  .group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    align-items: center;
+  }
+
+  #play{
+    height: 13vh;
+    width: 50%;
+    border-radius: 50px;
+    background-color: rgb(130, 0, 0);
+    border-style: none;
+    font-size: larger;
+    color: white;
+  }
+
+  #play2{
+    height: 13vh;
+    width: 50%;
+    border-radius: 50px;
+    background-color: rgb(0, 151, 189);
+    border-style: none;
+    font-size: larger;
+    color: white;
+  }
+
+  #play:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    background-color: rgb(92, 0, 0);
+  }
+
+  #play2:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    background-color: rgb(1, 69, 87);
   }

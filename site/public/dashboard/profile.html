@@ -32,7 +32,7 @@
 
             <div class="hello">
                 <h3> <i class="fa fa-user"></i><span id="b_usuario">usuário</span></h3>
-                <h3><i class="fa fa-envelope"></i> <span id="m_usuario">usuário</span></h3>
+                <h3><i class="fa fa-envelope"></i> <span id="m_usuario"></span></h3>
             </div>
 
          
@@ -75,8 +75,8 @@
                     <h3 class="tituloGraficos">
                         <span id="tituloAquario1"></span>
                     </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas1"></canvas>
+                    <div class="graph" style="z-index: 999; position: relative;">
+                        <canvas id="myChartCanvas1" style="z-index: 999;"></canvas>
                     </div>
                     <!-- <div class="label-captura">
                         <p id="avisoCaptura1" style="color: white"></p>
@@ -128,7 +128,7 @@
                     <div class="header-card">
                         <p>última resolução</p>
                         <span id="bigNumber">
-                            20:44:50
+                            
                         </span> 
                     </div>
         
@@ -146,6 +146,10 @@
         
                 </div>
             </div>
+
+            <div class="refazer">
+
+            </div>
         </div>
     </div>
 
@@ -156,30 +160,32 @@
 
 <script>
 
+    
     m_usuario.innerHTML = sessionStorage.EMAIL_USUARIO;
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    var fkUsuario = sessionStorage.ID_USUARIO
+    var idUsuario = Number(sessionStorage.ID_USUARIO)
 
     let proximaAtualizacao;
 
     window.onload = obterDadosGraficos();
 
     function obterDadosGraficos() {
-        obterDadosGrafico(1)
-        obterDadosGrafico(2)
+        obterDadosGrafico(idUsuario)
+        obterDadosGrafico(idUsuario)
         // obterDadosGrafico(3)
         // obterDadosGrafico(4)
     }
 
     // verificar_autenticacao();
 
-    function alterarTitulo(idQuizz) {
-        var tituloAquario = document.getElementById(`tituloAquario${idQuizz}`)
-        tituloAquario.innerHTML = "Últimas respostas do <span style='color: grey'>Quizz " + idQuizz + " - Teste de Conhecimento </span>"
+    function alterarTitulo(idUsuario) {
+        var idUsuario = sessionStorage.ID_USUARIO
+        var tituloAquario = document.getElementById(`tituloAquario${idUsuario}`)
+        tituloAquario.innerHTML = "Últimas respostas do <span style='color: grey'>Quizz 1 - Teste de Conhecimento </span>"
     }
 
-    function exibirAquario(idQuizz) {
+    function exibirAquario(idUsuario) {
         let todosOsGraficos = document.getElementById("graficos")
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
@@ -199,12 +205,12 @@
         }
         
         // exibindo - ou não - o gráfico
-        let graficoExibir = document.getElementById(`grafico${idQuizz}`)
+        let graficoExibir = document.getElementById(`grafico${idUsuario}`)
         graficoExibir.classList.remove("display-none")
         graficoExibir.classList.add("display-block")
         
         // alterando estilo do botão
-        let btnExibir = document.getElementById(`btnAquario${idQuizz}`)
+        let btnExibir = document.getElementById(`btnAquario${idUsuario}`)
         btnExibir.classList.remove("btn-white")
         btnExibir.classList.add("btn-pink")
     }
@@ -220,21 +226,21 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function obterDadosGrafico(idQuizz) {
+    function obterDadosGrafico(idUsuario) {
 
-        alterarTitulo(idQuizz)
+        alterarTitulo(idUsuario)
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/medidas/ultimas/${idQuizz}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, idQuizz);
+                    plotarGrafico(resposta, idUsuario);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -248,7 +254,7 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idQuizz) {
+    function plotarGrafico(resposta, idUsuario) {
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -261,15 +267,17 @@
             datasets: [{
                 label: 'Acertos',
                 data: [],
-                fill: false,
+                fill: true,
                 borderColor: '#e8ff80',
+                backgroundColor: '#22262F',
                 tension: 0.1
             },
             {
                 label: 'Erros',
                 data: [],
-                fill: false,
+                fill: true,
                 borderColor: '#f56767',
+                backgroundColor: '#f56767',
                 tension: 0.1
             }]
         };
@@ -296,17 +304,17 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'line',
+            type: 'bar',
             data: dados,
         };
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById(`myChartCanvas${idQuizz}`),
+            document.getElementById(`myChartCanvas1`),
             config
         );
 
-        setTimeout(() => atualizarGrafico(idQuizz, dados, myChart), 2000);
+        setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
     }
 
 
@@ -315,11 +323,9 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idQuizz, dados, myChart) {
+    function atualizarGrafico(idUsuario, dados, myChart) {
 
-
-
-        fetch(`/medidas/tempo-real/${idQuizz}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/tempo-real/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
@@ -327,9 +333,12 @@
                     console.log(`Dados atuais do gráfico:`);
                     console.log(dados);
 
-                    let avisoCaptura = document.getElementById(`avisoCaptura${idQuizz}`)
+                    let avisoCaptura = document.getElementById(`avisoCaptura${idUsuario}`)
                     avisoCaptura.innerHTML = ""
 
+                    // var big = dados.labels[dados.labels.length - 1]
+
+                    // bigNumber.innerHTML =` ${big}`
 
                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
@@ -355,12 +364,12 @@
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idQuizz, dados, myChart), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idQuizz, dados, myChart), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
             }
         })
             .catch(function (error) {

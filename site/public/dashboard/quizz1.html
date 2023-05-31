@@ -61,9 +61,17 @@
             <p>Então, prepare-se para entrar em uma galáxia muito distante e testar seus conhecimentos sobre Star Wars.
                 Que a Força esteja com você!</p>
         </div>
-        <div class="content-quizz">
+
+        <div id="before_quizz">
+            <h1>Preparado?</h1>
+            <div class="group">
+                <img width="250px" height="250px" src="../assets/imgs/gifquizz1.gif" alt="">
+                <button id="play" onclick="start()">JOGAR</button>
+            </div>
+        </div>
+        <div id="content_quizz" class="content-quizz" style="display: none;">
            
-            <div class="form-quizz">
+            <div class="form-quizz" >
 
                 <div class="question" id="q_one">
                     <label for="question1">1. Quem treinou Qui-Gon Jinn?</label>
@@ -249,6 +257,11 @@
                 </div>
 
                 <div id="div_pontuacao" style="display: none;">
+                    <h1 id="pontos_result"></h1>
+                    <div id="img_jedi"></div>
+                    <p>Parabéns, você chegou até aqui! Refaça o teste para alcançar uma pontuação maior!</p>
+                    <p><a style="color: #F9FFB5;" id="yellow" href="profile.html">Analise seus resultados <i class="fa fa-address-card-o" style="margin-left: 1%;" aria-hidden="true"></i></a></p>
+                    <button class="btn_refazer"><a id="refazer" href="quizz1.html">Refazer Quizz</a></button>
                 </div>
 
             </div>
@@ -302,6 +315,11 @@
     var erros = 0
     var acertos = 0
 
+
+    function start(){
+        before_quizz.style.display = 'none'
+        content_quizz.style.display = 'flex'
+    }
 
     function responder() {
         var resposta1 = question1.value;
@@ -646,7 +664,7 @@
 
             q_fifteen.style.display = 'none'
             div_pontuacao.style.display = "flex"
-            div_pontuacao.innerHTML = `Você acertou ${acertos}/15!`
+            pontos_result.innerHTML = `Você acertou ${acertos}/15!`
 
 
             ///////////////////////////////////////////////////////////
