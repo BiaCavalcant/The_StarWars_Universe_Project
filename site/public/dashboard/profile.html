@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/icon/favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>Profile | The Star Wars Universe</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
@@ -31,42 +31,46 @@
           <img src="../assets/imgs/logo (4).png" width="180px" height="80px" alt="">
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3> <i class="fa fa-user"></i><span id="b_usuario">usuário</span></h3>
+                <h3><i class="fa fa-envelope"></i> <span id="m_usuario">usuário</span></h3>
             </div>
 
          
             <div class="btn-nav">
 
-                <h3>Conhecimentos</h3>
+                <h3> <i class="fa fa-brain"></i> Conhecimentos</h3>
 
             </div>
 
             <div class="btn-nav-white">
 
-                <a href="profile2.html"><h3>Personalidade</h3></a>
+                <a href="profile2.html"><h3> <i class="fa fa-person"></i> Personalidade</h3></a>
 
             </div>
 
             <div class="btn-nav-white">
-                <a href="./home.html">
-                    <h3>Home</h3>
+                <a href="./quizzes.html">
+                    <h3> <i class="fa fa-gamepad"></i> Quizzes</h3>
                 </a>
             </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
 
         </div>
 
         <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <!-- <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Quizz 1</button> -->
-                <!-- <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Quizz 2</button> -->
-              
+            <div class="header_dash">
+                <div class="header-header">
+                    <h2>Dashboards</h2>
+                    <span>Analise seus resultados após a resolução dos games</span>    
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Logoff</h3>
+                </div>
             </div>
             <div id="graficos">
+                <div class="sabre">
+                    <img src="../assets/imgs/sabre.png" alt="">
+                </div>
                 <div id="grafico1" class="display-block">
                     <h3 class="tituloGraficos">
                         <span id="tituloAquario1"></span>
@@ -117,7 +121,30 @@
             </div>
 
             <div class="info_dash" id="info_dash">
-                
+                <div class="card_kpi">
+                    <div class="img-kpi">
+                        <img src="../assets/imgs/icons8-r2-d2-144.png" height="120px" width="120px" alt="">
+                    </div>
+                    <div class="header-card">
+                        <p>última resolução</p>
+                        <span id="bigNumber">
+                            20:44:50
+                        </span> 
+                    </div>
+        
+                </div>
+                <div class="card_kpi">
+                    <div class="img-kpi">
+                        <img src="../assets/imgs/icons8-c-3po-144.png" height="120px" width="120px" alt="">
+                    </div>
+                    <div class="header-card">
+                        <p>Maior pontuação</p>
+                        <span id="bigNumber">
+                            13 pontos
+                        </span>   
+                    </div>
+        
+                </div>
             </div>
         </div>
     </div>
@@ -129,7 +156,7 @@
 
 <script>
 
-
+    m_usuario.innerHTML = sessionStorage.EMAIL_USUARIO;
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var fkUsuario = sessionStorage.ID_USUARIO
@@ -149,7 +176,7 @@
 
     function alterarTitulo(idQuizz) {
         var tituloAquario = document.getElementById(`tituloAquario${idQuizz}`)
-        tituloAquario.innerHTML = "Últimas respostas do <span style='color: yellow'>Quizz " + idQuizz + " - Teste de Conhecimento </span>"
+        tituloAquario.innerHTML = "Últimas respostas do <span style='color: grey'>Quizz " + idQuizz + " - Teste de Conhecimento </span>"
     }
 
     function exibirAquario(idQuizz) {
@@ -235,14 +262,14 @@
                 label: 'Acertos',
                 data: [],
                 fill: false,
-                borderColor: 'yellow',
+                borderColor: '#e8ff80',
                 tension: 0.1
             },
             {
                 label: 'Erros',
                 data: [],
                 fill: false,
-                borderColor: 'purple',
+                borderColor: '#f56767',
                 tension: 0.1
             }]
         };
