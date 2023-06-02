@@ -47,7 +47,7 @@ function buscarUltimasMedidas2(req, res) {
 
     const limite_linhas = 7; 
 
-    var idUsuario = req.params.idQuizz;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
@@ -67,7 +67,7 @@ function buscarUltimasMedidas2(req, res) {
 
 function buscarMedidasEmTempoReal2(req, res) {
 
-    var idUsuario = req.params.idQuizz;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`Recuperando medidas em tempo real`);
 

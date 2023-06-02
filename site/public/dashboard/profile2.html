@@ -58,7 +58,7 @@
 
         </div>
 
-        <div class="dash">
+        <div class="dash" style="height: fit-content;">
             <div class="header_dash">
                 <div class="header-header">
                     <h2>Dashboards</h2>
@@ -70,48 +70,44 @@
             </div>
             <div id="graficos">
                 <div class="sabre">
-                    <img src="../assets/imgs/sabre2.png" id="sabre2" alt="">
+                    <img src="../assets/imgs/sabre3.png" alt="">
                 </div>
+                <div class="header_perso">
+                    <p>Análise de sua personalidade com base nas suas respostas do <b>Teste de Personalidade</b></p>
+                </div>
+                
                 <div id="grafico1" class="display-block">
                     <h3 class="tituloGraficos">
                         <span id="tituloAquario1"></span>
                     </h3>
                     <div class="graph">
-                        <canvas id="myChartCanvas2"></canvas>
+                        <canvas id="grafico_personalidade" style="z-index: 9990;"></canvas>
                     </div>
                     <!-- <div class="label-captura">
                         <p id="avisoCaptura1" style="color: white"></p>
                     </div> -->
                 </div>
-
-
-                <div class="info_dash" id="info_dash">
-                    <div class="card_kpi">
-                        <div class="img-kpi">
-                            <img src="../assets/imgs/icons8-r2-d2-144.png" height="120px" width="120px" alt="">
+                <div class="refazeres" >
+                    <div class="refazer" style="margin-top: 10%;">
+                        <div class="content-refazer1">
+                         <a class="content-refazer" href="quizz2.html">
+                             <img width="60px" height="60px" src="../assets/imgs/icons8-reproduzir-100.png" alt="">
+                             <h2>REFAZER QUIZZ</h2>
+                          </a>   
                         </div>
-                        <div class="header-card">
-                            <p>última resolução</p>
-                            <span id="bigNumber">
-                                
-                            </span> 
-                        </div>
-            
-                    </div>
-                    <div class="card_kpi">
-                        <div class="img-kpi">
-                            <img src="../assets/imgs/icons8-c-3po-144.png" height="120px" width="120px" alt="">
-                        </div>
-                        <div class="header-card">
-                            <p>Maior pontuação</p>
-                            <span id="bigNumber">
-                                13 pontos
-                            </span>   
-                        </div>
-            
-                    </div>
+                     </div>
+                     <div class="refazer" style="margin-top: 10%;">
+                         <div class="content-refazer1">
+                          <a class="content-refazer" href="home.html">
+                              <img width="60px" height="60px" src="../assets/imgs/icons8-casa-100.png" alt="">
+                              <h2>IR PARA HOME</h2>
+                           </a>   
+                         </div>
+                      </div>
                 </div>
-        </div>
+                
+            </div>
+       
     </div>
 
 
@@ -142,7 +138,7 @@
     function alterarTitulo2(idUsuario) {
         var idUsuario = sessionStorage.ID_USUARIO
         var tituloAquario = document.getElementById(`tituloAquario1`)
-        tituloAquario.innerHTML = "Últimas respostas do <span style='color: yellow'>Quizz 2 - Teste de Personalidade </span>"
+        
     }
 
     function exibirAquario2(idUsuario) {
@@ -194,7 +190,7 @@
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/perso/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -219,25 +215,37 @@
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
-        let labels = [];
-
+        let labels = ['Mais Jedi', 'Mais Sith'];
+ 
         // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Mais Jedi',
+                label: 'Quantidade de questões',
                 data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                fill: true,
+                borderColor:[
+                    'red',
+                    '#0583D2'
+                    ],
+                backgroundColor:  [
+                    'red',
+                    '#0583D2'
+                    ],
                 tension: 0.1
             },
             {
-                label: 'Mais Sith',
+                label: 'Quantidade de questões',
                 data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
+                fill: true,
+                borderColor: 'blue',
+                backgroundColor:  [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)'
+                    ],
                 tension: 0.1
-            }]
+            }
+        ]
         };
 
         console.log('----------------------------------------------')
@@ -247,9 +255,9 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            labels.push(registro.momento_grafico);
+            // labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.jedi);
-            dados.datasets[1].data.push(registro.sith);
+            dados.datasets[0].data.push(registro.sith);
         }
 
         console.log('----------------------------------------------')
@@ -262,17 +270,22 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'line',
+            type: 'pie',
             data: dados,
+            options:{
+             animation: {
+                animateScale: true,
+                animateRotate: true
+            }}
         };
 
         // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById(`myChartCanvas2`),
+        let myChart5 = new Chart(
+            document.getElementById(`grafico_personalidade`),
             config
         );
 
-        setTimeout(() => atualizarGrafico2(idUsuario, dados, myChart), 2000);
+        setTimeout(() => atualizarGrafico5(idUsuario, dados, myChart5), 2000);
     }
 
 
@@ -281,9 +294,9 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico2(idUsuario, dados, myChart) {
+    function atualizarGrafico2(idUsuario, dados, myChart5) {
 
-        fetch(`/medidas/tempo-real/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/tempo-real/perso/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
@@ -310,21 +323,21 @@
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(novoRegistro[0].maisJedi); // incluir uma nova medida de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].jedi); // incluir uma nova medida de umidade
 
                         dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                        dados.datasets[1].data.push(novoRegistro[0].maisSith); // incluir uma nova medida de temperatura
+                        dados.datasets[1].data.push(novoRegistro[0].sith); // incluir uma nova medida de temperatura
 
-                        myChart.update();
+                        myChart5.update();
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico2(idUsuario, dados, myChart), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico2(idUsuario, dados, myChart5), 5000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico2(idUsuario, dados, myChart), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico2(idUsuario, dados, myChart5), 2000);
             }
         })
             .catch(function (error) {

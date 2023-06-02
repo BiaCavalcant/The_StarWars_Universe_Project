@@ -227,6 +227,9 @@ body {
 .graph {
   width: 80%;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 10px;
 }
 
@@ -311,9 +314,59 @@ canvas {
   -webkit-box-shadow: 8px 8px 124px -96px rgba(255,255,255,1);
 }
 
+.refazer{
+  background-color: #2E323C;
+  border-radius: 40px;
+  width: 48%;
+  align-self: center;
+  height: 20vh;
+  position: relative;
+  -webkit-box-shadow: 8px 8px 124px -96px rgba(255,255,255,1);
+  margin-top: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 24%; */
+}
+
+.refazeres{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content-refazer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 15vh;
+  text-decoration: none;
+  color: white;
+  align-items: center;
+}
+
+.content-refazer h2{
+
+}
+
+.content-refazer:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.content-refazer1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 15vh;
+}
+
 .header-left img{
   margin-left: 20px;
   margin-top: -18px;
+  cursor: pointer;
 }
 
 .sabre{
@@ -401,7 +454,22 @@ canvas {
   margin-bottom: 1%;
 }
 
-.refazer{
+
+
+#grafico_personalidade{
+  height: 60vh !important;
+  width: 50% !important;
+  align-self: center;
+}
+
+.header_perso{
   width: 100%;
-  height: 20vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.header_perso p{
+  color: white;
+  margin-right: 95px;
 }

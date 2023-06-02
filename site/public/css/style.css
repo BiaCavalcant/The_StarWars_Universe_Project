@@ -241,6 +241,7 @@ input {
 .header-left a {
   text-decoration: none;
   color: white;
+  width: 110%;
 }
 
 .header-left {
@@ -326,6 +327,7 @@ input {
   color: #ffffff;
   padding: 0;
   margin: 0;
+  width: 120%;
 }
 
 .btn-nav h3,

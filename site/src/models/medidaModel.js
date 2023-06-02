@@ -5,15 +5,6 @@ function buscarUltimasMedidas(idUsuario, limite_linhas) {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        // instrucaoSql = `select top ${limite_linhas}
-        // dht11_temperatura as temperatura, 
-        // dht11_umidade as umidade,  
-        //                 momento,
-        //                 FORMAT(momento, 'HH:mm:ss') as momento_grafico
-        //             from medida
-        //             where fk_aquario = ${idAquario}
-        //             order by id desc`;
-
         instrucaoSql = `
             select top ${limite_linhas}
             acertos as acertos,
@@ -22,19 +13,10 @@ function buscarUltimasMedidas(idUsuario, limite_linhas) {
                     FORMAT(data_hora, 'HH:mm:ss') as momento_grafico
                 from resolucao_quizz
                 where fkQuizz = 1 
-                and and fkUsuario = ${idUsuario}
+                and fkUsuario = ${idUsuario}
                 order by idResolucao desc
         `;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        // instrucaoSql = `select 
-        // dht11_temperatura as temperatura, 
-        // dht11_umidade as umidade,
-        //                 momento,
-        //                 DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-        //             from medida
-        //             where fk_aquario = ${idAquario}
-        //             order by id desc limit ${limite_linhas}`;
-
 
         instrucaoSql = `select 
         acertos as acertos, 
@@ -45,7 +27,6 @@ function buscarUltimasMedidas(idUsuario, limite_linhas) {
                     where fkQuizz = 1
                     and fkUsuario = ${idUsuario}
                     order by idResolucao desc limit ${limite_linhas}`;
-
 
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -71,6 +52,7 @@ function buscarMedidasEmTempoReal(idUsuario) {
                         from resolucao_quizz where fkQuizz = 1
                         and fkUsuario = ${idUsuario}
                     order by idResolucao desc`;
+
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 
@@ -98,28 +80,32 @@ function buscarUltimasMedidas2(idUsuario, limite_linhas) {
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
 
-        instrucaoSql2 = `
-            select top ${limite_linhas}
-            maisJedi as jedi,
-            maisSith as sith,
-                    data_hora,
-                    FORMAT(data_hora, 'HH:mm:ss') as momento_grafico
-                from resolucao_quizz
-                where fkQuizz = 2
-                and fkUsuario = ${idUsuario} 
-                order by idResolucao desc
-        `;
+        // instrucaoSql2 = `
+        //     select top ${limite_linhas}
+        //     maisJedi as jedi,
+        //     maisSith as sith,
+        //             data_hora,
+        //             FORMAT(data_hora, 'HH:mm:ss') as momento_grafico
+        //         from resolucao_quizz
+        //         where fkQuizz = 2
+        //         and fkUsuario = ${idUsuario} 
+        //         order by idResolucao desc
+        // `;
+
+        instrucaoSql = `select sum(maisJedi) as jedi, sum(maisSith) as sith
+                from resolucao_quizz where fkQuizz = 2
+                and fkUsuario = ${idUsuario}
+                order by idResolucao desc`;
+
+
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
       
         instrucaoSql2 = `select 
-        maisJedi as jedi, 
-        maisSith as sith,
-                        data_hora,
-                        DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico
+        sum(maisJedi) as jedi, 
+        sum(maisSith) as sith
                     from resolucao_quizz
                     where fkQuizz = 2
-                    and fkUsuario = ${idUsuario}
-                    order by idResolucao desc limit ${limite_linhas}`;
+                    and fkUsuario = ${idUsuario}`;
 
 
     } else {
@@ -133,29 +119,40 @@ function buscarUltimasMedidas2(idUsuario, limite_linhas) {
 
 function buscarMedidasEmTempoReal2(idUsuario) {
 
-    // fkUsuario = sessionStorage.ID_USUARIO
-
     instrucaoSql2 = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql2 = `select top 1
-        maisJedi as jedi, 
-        maisSith as sith,  
-                        CONVERT(varchar, data_hora, 108) as momento_grafico, 
-                        fkQuizz 
-                        from resolucao_quizz where fkQuizz = 2
-                        and fkUsuario = ${idUsuario} 
-                    order by idResolucao desc`;
+        // instrucaoSql2 = `select top 1
+        // maisJedi as jedi, 
+        // maisSith as sith,  
+        //                 CONVERT(varchar, data_hora, 108) as momento_grafico, 
+        //                 fkQuizz 
+        //                 from resolucao_quizz where fkQuizz = 2
+        //                 and fkUsuario = ${idUsuario} 
+        //             order by idResolucao desc`;
+        
+        instrucaoSql = `select sum(maisJedi) as jedi, sum(maisSith) as sith
+                from resolucao_quizz where fkQuizz = 2
+                and fkUsuario = ${idUsuario}
+                order by idResolucao desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        // instrucaoSql2 = `select 
+        // maisJedi as jedi, 
+        // maisSith as sith,
+        //                 DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico, 
+        //                 fkQuizz 
+        //                 from resolucao_quizz where fkQuizz = 2
+        //                 and fkUsuario = ${idUsuario} 
+        //             order by idResolucao desc limit 7`;
+
         instrucaoSql2 = `select 
-        maisJedi as jedi, 
-        maisSith as sith,
-                        DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico, 
-                        fkQuizz 
-                        from resolucao_quizz where fkQuizz = 2
-                        and fkUsuario = ${idUsuario} 
-                    order by idResolucao desc limit 1`;
+        sum(maisJedi) as jedi, 
+        sum(maisSith) as sith
+                    from resolucao_quizz
+                    where fkQuizz = 2
+                    and fkUsuario = ${idUsuario}`;
+
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

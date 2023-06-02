@@ -57,7 +57,7 @@
 
         </div>
 
-        <div class="dash">
+        <div class="dash" style="height: fit-content;">
             <div class="header_dash">
                 <div class="header-header">
                     <h2>Dashboards</h2>
@@ -117,40 +117,29 @@
                     <div class="label-captura">
                         <p id="avisoCaptura4" style="color: white"></p>
                     </div>
-                </div>     
-            </div>
-
-            <div class="info_dash" id="info_dash">
-                <div class="card_kpi">
-                    <div class="img-kpi">
-                        <img src="../assets/imgs/icons8-r2-d2-144.png" height="120px" width="120px" alt="">
-                    </div>
-                    <div class="header-card">
-                        <p>última resolução</p>
-                        <span id="bigNumber">
-                            
-                        </span> 
-                    </div>
-        
+                </div>   
+                
+                <div class="refazeres">
+                    <div class="refazer">
+                        <div class="content-refazer1">
+                         <a class="content-refazer" href="quizz2.html">
+                             <img width="60px" height="60px" src="../assets/imgs/icons8-reproduzir-100.png" alt="">
+                             <h2>REFAZER QUIZZ</h2>
+                          </a>   
+                        </div>
+                     </div>
+                     <div class="refazer">
+                         <div class="content-refazer1">
+                          <a class="content-refazer" href="home.html">
+                              <img width="60px" height="60px" src="../assets/imgs/icons8-casa-100.png" alt="">
+                              <h2>IR PARA HOME</h2>
+                           </a>   
+                         </div>
+                      </div>
                 </div>
-                <div class="card_kpi">
-                    <div class="img-kpi">
-                        <img src="../assets/imgs/icons8-c-3po-144.png" height="120px" width="120px" alt="">
-                    </div>
-                    <div class="header-card">
-                        <p>Maior pontuação</p>
-                        <span id="bigNumber">
-                            13 pontos
-                        </span>   
-                    </div>
-        
-                </div>
-            </div>
-
-            <div class="refazer">
-
             </div>
         </div>
+        
     </div>
 
 
@@ -166,7 +155,7 @@
 
     var idUsuario = Number(sessionStorage.ID_USUARIO)
 
-    let proximaAtualizacao;
+    let proximaAtualizacao2;
 
     window.onload = obterDadosGraficos();
 
@@ -230,8 +219,8 @@
 
         alterarTitulo(idUsuario)
 
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
+        if (proximaAtualizacao2 != undefined) {
+            clearTimeout(proximaAtualizacao2);
         }
 
         fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
@@ -270,6 +259,7 @@
                 fill: true,
                 borderColor: '#e8ff80',
                 backgroundColor: '#22262F',
+                borderRadius: '20',
                 tension: 0.1
             },
             {
@@ -277,6 +267,7 @@
                 data: [],
                 fill: true,
                 borderColor: '#f56767',
+                borderRadius: '20',
                 backgroundColor: '#f56767',
                 tension: 0.1
             }]
@@ -355,21 +346,21 @@
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].acertos); // incluir uma nova medida de umidade
 
                         dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                        dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+                        dados.datasets[1].data.push(novoRegistro[0].erros); // incluir uma nova medida de temperatura
 
                         myChart.update();
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
+                    proximaAtualizacao2 = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
+                proximaAtualizacao2 = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
             }
         })
             .catch(function (error) {

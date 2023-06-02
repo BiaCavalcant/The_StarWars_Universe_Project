@@ -12,11 +12,11 @@ router.get("/tempo-real/:idUsuario", function (req, res) {
 })
 
 
-router.get("/ultimas/:idUsuario", function (req, res) {
+router.get("/ultimas/perso/:idUsuario", function (req, res) {
     medidaController.buscarUltimasMedidas2(req, res);
 });
 
-router.get("/tempo-real/:idUsuario", function (req, res) {
+router.get("/tempo-real/perso/:idUsuario", function (req, res) {
     medidaController.buscarMedidasEmTempoReal2(req, res);
 })
 
