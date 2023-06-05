@@ -28,14 +28,14 @@
 
     <div class="janela">
         <div class="header-left">
-          <img src="../assets/imgs/logo (4).png" width="180px" height="80px" alt="">
+            <img src="../assets/imgs/logo (4).png" width="180px" height="80px" alt="">
 
             <div class="hello">
                 <h3> <i class="fa fa-user"></i><span id="b_usuario">usuário</span></h3>
                 <h3><i class="fa fa-envelope"></i> <span id="m_usuario"></span></h3>
             </div>
 
-         
+
             <div class="btn-nav">
 
                 <h3> <i class="fa fa-brain"></i> Conhecimentos</h3>
@@ -44,7 +44,9 @@
 
             <div class="btn-nav-white">
 
-                <a href="profile2.html"><h3> <i class="fa fa-person"></i> Personalidade</h3></a>
+                <a href="profile2.html">
+                    <h3> <i class="fa fa-person"></i> Personalidade</h3>
+                </a>
 
             </div>
 
@@ -61,7 +63,7 @@
             <div class="header_dash">
                 <div class="header-header">
                     <h2>Dashboards</h2>
-                    <span>Analise seus resultados após a resolução dos games</span>    
+                    <span>Analise seus resultados após a resolução dos games</span>
                 </div>
                 <div class="btn-logout" onclick="limparSessao()">
                     <h3>Logoff</h3>
@@ -100,7 +102,7 @@
                         <span id="tituloAquario3"></span>
                     </h3>
                     <div class="graph">
-                         
+
                     </div>
                     <div class="label-captura">
                         <p id="avisoCaptura3" style="color: white"></p>
@@ -117,29 +119,29 @@
                     <div class="label-captura">
                         <p id="avisoCaptura4" style="color: white"></p>
                     </div>
-                </div>   
-                
+                </div>
+
                 <div class="refazeres">
                     <div class="refazer">
                         <div class="content-refazer1">
-                         <a class="content-refazer" href="quizz2.html">
-                             <img width="60px" height="60px" src="../assets/imgs/icons8-reproduzir-100.png" alt="">
-                             <h2>REFAZER QUIZZ</h2>
-                          </a>   
+                            <a class="content-refazer" href="quizz1.html">
+                                <img width="60px" height="60px" src="../assets/imgs/icons8-reproduzir-100.png" alt="">
+                                <h2>REFAZER QUIZZ</h2>
+                            </a>
                         </div>
-                     </div>
-                     <div class="refazer">
-                         <div class="content-refazer1">
-                          <a class="content-refazer" href="home.html">
-                              <img width="60px" height="60px" src="../assets/imgs/icons8-casa-100.png" alt="">
-                              <h2>IR PARA HOME</h2>
-                           </a>   
-                         </div>
-                      </div>
+                    </div>
+                    <div class="refazer">
+                        <div class="content-refazer1">
+                            <a class="content-refazer" href="home.html">
+                                <img width="60px" height="60px" src="../assets/imgs/icons8-casa-100.png" alt="">
+                                <h2>IR PARA HOME</h2>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 
@@ -149,7 +151,7 @@
 
 <script>
 
-    
+
     m_usuario.innerHTML = sessionStorage.EMAIL_USUARIO;
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
@@ -184,7 +186,7 @@
                 elementoAtual.classList.remove("display-block")
             }
             elementoAtual.classList.add("display-none")
-            
+
             // alterando estilo do botão
             let btnAtual = document.getElementById(`btnAquario${i}`)
             if (btnAtual.classList.contains("btn-pink")) {
@@ -192,12 +194,12 @@
             }
             btnAtual.classList.add("btn-white")
         }
-        
+
         // exibindo - ou não - o gráfico
         let graficoExibir = document.getElementById(`grafico${idUsuario}`)
         graficoExibir.classList.remove("display-none")
         graficoExibir.classList.add("display-block")
-        
+
         // alterando estilo do botão
         let btnExibir = document.getElementById(`btnAquario${idUsuario}`)
         btnExibir.classList.remove("btn-white")
@@ -245,6 +247,7 @@
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     function plotarGrafico(resposta, idUsuario) {
 
+
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
@@ -257,7 +260,7 @@
                 label: 'Acertos',
                 data: [],
                 fill: true,
-                borderColor: '#e8ff80',
+                borderColor: 'pink',
                 backgroundColor: '#22262F',
                 borderRadius: '20',
                 tension: 0.1
@@ -266,7 +269,7 @@
                 label: 'Erros',
                 data: [],
                 fill: true,
-                borderColor: '#f56767',
+                borderColor: 'white',
                 borderRadius: '20',
                 backgroundColor: '#f56767',
                 tension: 0.1
@@ -297,6 +300,25 @@
         const config = {
             type: 'bar',
             data: dados,
+            options: {
+                animation: {
+                    duration: 2000, // Duração da animação em milissegundos
+                    onComplete: function (animation) {
+                        var chartInstance = animation.chart;
+                        var ctx = chartInstance.ctx;
+
+                        chartInstance.data.datasets.forEach(function (dataset, datasetIndex) {
+                            var meta = chartInstance.getDatasetMeta(datasetIndex);
+                            meta.data.forEach(function (bar, index) {
+                                var data = dataset.data[index];
+                                var animationDelay = index * 100; // Atraso da animação em milissegundos
+
+                                bar.transition(animation).delay(animationDelay).duration(1000).easeOutBounce().style.height = bar.height + 'px';
+                            });
+                        });
+                    }
+                }
+            }
         };
 
         // Adicionando gráfico criado em div na tela
