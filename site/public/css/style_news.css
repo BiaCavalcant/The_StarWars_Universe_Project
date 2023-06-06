@@ -1239,3 +1239,93 @@ body {
     left: 0;
     right: 0;
 }
+
+.cards-perso{
+  width: 100%;
+  height: fit-content;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-perso{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  width: 80%;
+  height: 80vh;
+  align-self: center;
+  margin-bottom: 4%;
+  box-shadow: 0px 7px 40px #8e8e8e;
+  border-radius: 3%;
+  overflow: hidden;
+}
+
+.img-card-perso{
+  background-color: #8e8e8e;
+  width: 100%;
+  height: 80vh;
+}
+
+.content-card-perso{
+  width: 100%;
+  height: 40vh;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#luke-perso{
+  background-image: url("https://uploads.jovemnerd.com.br/wp-content/uploads/2020/06/luke-skywalker-jedi-professor-mark-hamill.jpg");
+  background-size: cover;
+}
+
+#leia-perso{
+  background-image: url("https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/12/08/5fa3d8e24f841.jpeg");
+  background-size: cover;
+}
+
+#darth-perso{
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/darth-vader-main_4560aff7.jpeg?region=0%2C107%2C1280%2C640");
+  background-size: cover;
+}
+
+#chewie-perso{
+  background-image: url("https://sm.ign.com/ign_pt/screenshot/default/chewie-db-2c0efea2_3sfx.jpg");
+  background-size: cover;
+}
+
+#kylo-perso{
+  background-image: url("https://observatoriodocinema.uol.com.br/wp-content/uploads/2019/09/cropped-p.jpeg");
+  background-size: cover;
+}
+
+#droids-perso{
+  background-image: url("https://uploads.jovemnerd.com.br/wp-content/uploads/2020/12/star-wars-a-droid-story.jpg");
+  background-size: cover;
+}
+
+#palpatine-perso{
+  background-image: url("https://trecobox.com.br/wp-content/uploads/2022/05/palpatine-2.jpg");
+  background-size: cover;
+}
+
+#solo-perso{
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/han-solo-main_a4c8ff79.jpeg?region=0%2C0%2C1920%2C1080");
+  background-size: cover;
+}
+
+#yoda-perso{
+  background-image: url("https://uploads.jovemnerd.com.br/wp-content/uploads/2016/09/yoda-the-empire-strikes-back_qm6s-1210x544.jpg");
+  background-size: cover;
+}
+
+.card-perso a{
+  width: inherit;
+  height: 50vh;
+  display: flex;
+}

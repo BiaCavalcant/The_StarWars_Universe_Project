@@ -1,186 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Characters | The Star Wars Universe</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="./js/funcoes.js"></script>
+  <title>Characters | The Star Wars Universe</title>
 
-    <link rel="icon" href="../assets/icon/favicon.ico" />
-    <link rel="stylesheet" href="../css/style_news.css" />
-    <link rel="stylesheet" href="../css/style_home.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
+  <script src="./js/funcoes.js"></script>
 
-  <body>
-    <div class="noticia">
-      <div class="header">
-        <ul class="nav-bar">
-          <li><a href="home.html">HOME</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropbtn">HAVE FUN</a>
-            <div class="dropdown-content">
-              <a href="endor.html">PLANETAS</a>
-              <a href="personagens.html">PERSONAGENS</a>
-              <a href="filmes.html">FILMES</a>
-              <a href="recomendacoes.html">RECOMENDAÇÕES</a>
-              <a href="game.html">GAME</a>
+  <link rel="icon" href="../assets/icon/favicon.ico" />
+  <link rel="stylesheet" href="../css/style_news.css" />
+  <link rel="stylesheet" href="../css/style_home.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="noticia">
+    <div class="header">
+      <ul class="nav-bar">
+        <li><a href="home.html">HOME</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">HAVE FUN</a>
+          <div class="dropdown-content">
+            <a href="endor.html">PLANETAS</a>
+            <a href="personagens.html">PERSONAGENS</a>
+            <a href="filmes.html">FILMES</a>
+            <a href="recomendacoes.html">RECOMENDAÇÕES</a>
+            <a href="game.html">GAME</a>
+          </div>
+        </li>
+        <li><a href="quizzes.html">QUIZZES</a></li>
+        <li>
+          <img style="margin-top: -25px" width="140px" height="60px" src="../assets/imgs/logo (4).png" alt="" />
+        </li>
+
+        <li><a href="contactUs.html">CONTACT US</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li style="margin-left: -20px" id="user-li">
+          <a class="li-user" href="profile.html">
+        <li class="fa fa-user-o">PERFIL</li>
+        </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="header-perso">
+      <div class="header-perso-content">
+        <h1>CHARACTERS</h1>
+        <p>Conheça os principais personagens do universo de Star Wars</p>
+
+        <div class="cards-perso">
+          <div class="card-perso">
+            <div class="img-card-perso" id="luke-perso"><a href="luke.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Luke Skywalker</h2>
+              <h1>The Jedi Knight</h1>
             </div>
-          </li>
-          <li><a href="quizzes.html">QUIZZES</a></li>
-          <li>
-            <img
-              style="margin-top: -25px"
-              width="140px"
-              height="60px"
-              src="../assets/imgs/logo (4).png"
-              alt=""
-            />
-          </li>
-
-          <li><a href="contactUs.html">CONTACT US</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li style="margin-left: -20px" id="user-li">
-            <a class="li-user" href="profile.html">
-              <li class="fa fa-user-o">PERFIL</li>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="header-perso">
-        <div class="header-perso-content">
-          <h1>CHARACTERS</h1>
-          <p>Conheça os principais personagens do universo de Star Wars</p>
-          <!-- <div class="cards-personagens">
-                    <a href="luke.html">
-                        <div class="card-personagem" id="luke"></div>
-                    </a>
-                    <a href="leia.html">
-                        <div class="card-personagem" id="leia"></div>
-                    </a>
-                    <a href="vader.html">
-                        <div class="card-personagem" id="vader"></div>
-                    </a>
-                </div>
-                <div class="cards-personagens">
-                    <a href="kylo.html">
-                        <div class="card-personagem" id="kylo"></div>
-                    </a>
-                    <a href="solo.html">
-                        <div class="card-personagem" id="solo"></div>
-                    </a>
-                    <a href="yoda.html">
-                        <div class="card-personagem" id="yoda"></div>
-                    </a>
-                </div>
-                <div class="cards-personagens" id="last">
-                    <a href="r2d2c3po.html">
-                        <div class="card-personagem" id="r2d2c3po"></div>
-                    </a>
-                    <a href="chewie.html">
-                        <div class="card-personagem" id="chewie"></div>
-                    </a>
-                    <a href="sidious.html">
-                        <div class="card-personagem" id="sidious"></div>
-                    </a>
-                </div> -->
-
-                <div class="container-fluid">
-
-                  <div class="col-xs-12 col-sm-6 col-md-4" style="padding: 3%">
-                      <div class="roundcard">
-                          <img class="roundimage" src="https://media0.giphy.com/media/ZX6NHzA9Fcddm/giphy.gif">
-                          <h1 class="cardtitle">Darth Vader</h1>
-                          <h2 class="cardsubtitle">The Dark Side</h2>
-                          <h3 class="cardsubsubtitle">The General Leader</h3>
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-4" style="padding: 3%">
-                      <div class="roundcard">
-                          <img class="roundimage" src="https://media3.giphy.com/media/YfCuW2maPixri/giphy.gif">
-                          <h1 class="cardtitle">C3-P0</h1>
-                          <h2 class="cardsubtitle">The Rebels</h2>
-                          <h3 class="cardsubsubtitle">The Helper Robot</h3>
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-4" style="padding: 3%">
-                      <div class="roundcard">
-                          <img class="roundimage" src="https://media4.giphy.com/media/CWkoXi05ji0Ny/giphy.gif">
-                          <h1 class="cardtitle">R2-D2</h1>
-                          <h2 class="cardsubtitle">The Rebel</h2>
-                          <h3 class="cardsubsubtitle">The Helper Robot</h3>
-                      </div>
-                  </div>
-          
-                  <div class="col-xs-12 col-sm-6 col-md-4" style="padding: 3%">
-                      <div class="roundcard">
-                          <img class="roundimage" src="https://media4.giphy.com/media/X50f9uthkjN60/giphy.gif">
-                          <h1 class="cardtitle">Darth Maul</h1>
-                          <h2 class="cardsubtitle">The Dark Side</h2>
-                          <h3 class="cardsubsubtitle">The General Leader</h3>
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-4" style="padding: 3%">
-                      <div class="roundcard">
-                          <img class="roundimage" src="https://media3.giphy.com/media/GNVmMgSdY5nxK/giphy.gif">
-                          <h1 class="cardtitle">Chewbucca</h1>
-                          <h2 class="cardsubtitle">The Rebels</h2>
-                          <h3 class="cardsubsubtitle">The Helping Hand</h3>
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-4" style="padding: 3%">
-                      <div class="roundcard">
-                          <img class="roundimage" src="https://media3.giphy.com/media/3o7abBAEIlO4kWucQ8/giphy.gif">
-                          <h1 class="cardtitle">Yoda</h1>
-                          <h2 class="cardsubtitle">The Force</h2>
-                          <h3 class="cardsubsubtitle">The Wise One</h3>
-                      </div>
-                  </div>
-          
-              </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="footer-content">
-        <div class="logo-icons">
-          <img src="../assets/imgs/logo (4).png" alt="" />
-          <div class="icons">
-            <i style="color: white" class="fa fa-facebook"></i>
-            <i style="color: white" class="fa fa-instagram"></i>
-            <i style="color: white" class="fa fa-youtube"></i>
-            <i style="color: white" class="fa fa-twitter"></i>
           </div>
-        </div>
-        <div class="footer-links">
-          <div class="column">
-            <h1>Institucional</h1>
-            <a href="contactUs.html">Contact Us</a>
-            <a href="login.html">Login</a>
-            <a href="cadastro.html">Cadastro</a>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="leia-perso"><a href="leia.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Princess Leia Organa</h2>
+              <h1>The Rebel Leader</h1>
+            </div>
           </div>
-          <div class="column">
-            <h1>Have Fun!</h1>
-            <a href="recomendacoes.html">Recomendações</a>
-            <a href="quizzes.html">Quizzes</a>
-            <a href="home.html">Home</a>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="darth-perso"><a href="vader.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Darth Vader</h2>
+              <h1>The Dark Side</h1>
+            </div>
           </div>
-          <div class="column">
-            <h1>Menu</h1>
-            <a href="personagens.html">Personagens</a>
-            <a href="filmes.html">Filmes</a>
-            <a href="endor.html">Planetas</a>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="solo-perso"><a href="solo.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Han Solo</h2>
+              <h1>The Smuggler with a Heart of Gold</h1>
+            </div>
+          </div>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="yoda-perso"><a href="yoda.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Yoda</h2>
+              <h1>The Legendary Jedi Master</h1>
+            </div>
+          </div>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="palpatine-perso"><a href="sidious.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Emperor Palpatine</h2>
+              <h1>The Manipulative Sith Lord</h1>
+            </div>
+          </div>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="chewie-perso"><a href="chewie.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Chewbacca</h2>
+              <h1>The Loyal Wookiee Companion</h1>
+            </div>
+          </div>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="droids-perso"> <a href="r2d2c3po.html"></a></div>
+            <div class="content-card-perso">
+              <h2>The droids</h2>
+              <h1>The Brave Astromech Droids</h1>
+            </div>
+          </div>
+
+          <div class="card-perso">
+            <div class="img-card-perso" id="kylo-perso"><a href="kylo.html"></a></div>
+            <div class="content-card-perso">
+              <h2>Kylo Ren</h2>
+              <h1>The Dark Warrior</h1>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  <div class="footer">
+    <div class="footer-content">
+      <div class="logo-icons">
+        <img src="../assets/imgs/logo (4).png" alt="" />
+        <div class="icons">
+          <i style="color: white" class="fa fa-facebook"></i>
+          <i style="color: white" class="fa fa-instagram"></i>
+          <i style="color: white" class="fa fa-youtube"></i>
+          <i style="color: white" class="fa fa-twitter"></i>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="column">
+          <h1>Institucional</h1>
+          <a href="contactUs.html">Contact Us</a>
+          <a href="login.html">Login</a>
+          <a href="cadastro.html">Cadastro</a>
+        </div>
+        <div class="column">
+          <h1>Have Fun!</h1>
+          <a href="recomendacoes.html">Recomendações</a>
+          <a href="quizzes.html">Quizzes</a>
+          <a href="home.html">Home</a>
+        </div>
+        <div class="column">
+          <h1>Menu</h1>
+          <a href="personagens.html">Personagens</a>
+          <a href="filmes.html">Filmes</a>
+          <a href="endor.html">Planetas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

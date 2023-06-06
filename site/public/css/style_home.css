@@ -717,6 +717,8 @@
     flex-direction: column;
     text-align: center;
     color: #ffffff;
+    justify-content: center;
+    align-items: center;
     margin-top: 4%;
 }
 
