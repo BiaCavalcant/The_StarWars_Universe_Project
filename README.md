@@ -1,14 +1,18 @@
 
-# The Star Wars Universe | 🚀🌑
-<img width="100%" alt="image" src="https://user-images.githubusercontent.com/125297211/234432668-3825c583-8cc5-40c9-9ee3-72bb92099bd3.png">
+# Tech For Good | 🚀👐🏻🎈👥
+<img width="100%" alt="image" src="![Design sem nome (1)](https://github.com/BiaCavalcant/The_StarWars_Universe_Project/assets/125297211/d83ae0f4-7834-483e-aa6a-0aab7449c8a9)
+">
 
 ## Descrição
-<p><b>- 📌The Star Wars Universe </b> é um projeto desenvolvido para desafiar os meus conhecimentos a respeito de HTML, CSS e Javascript, além de práticas de metodologias de gestão de projetos e análise de Banco de Dados. 
+<p><b>- 📌A Tech For Good </b> é uma empresa focada em promover o bem-estar social através da tecnologia, automatizando processos que são de extrema importância no terceiro setor- o setor das organizações não-governamentais.. 
   
-<p>- 📌Utilizando a API de apoio <i>web-data-viz</i> para Login e Cadastro, a proposta inicial é a criação de um website imersivo que interaja e estimule os usuários através de uma das franquias mais icônicas do cinema: <b>A Saga de Star Wars</b>.
+<p>- 📌Utilizado dos conhecimentos e <i>tecnologias</i> conhecidas pelo nosso time, nossa proposta é criar um sistema de gerenciamentos de ONG's que facilite o trabalho dos voluntários e que facilite nos processos internos da ONG, aumentando a produtividade fazendo com que cada vez mais ações do bem sejam propagadas.
 
  ## Tecnologias Utilizadas
   ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
   ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+  ![Kotlin](https://img.shields.io/badge/kotlin-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+  ![Bootstrap](https://img.shields.io/badge/bootstrap-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+  ![SQLServer](https://img.shields.io/badge/sqlserver-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
